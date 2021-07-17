@@ -36,6 +36,7 @@ installation and it has to be done through command line tools
 
 To use the repositories on your device, users would have to
 - install package `sailfishos-chum`;
+- update list of repositories by `ssu ur`;
 - refresh software cache on device (`devel-su zypper ref`),
 - install the software (`devel-su zypper in ...`)
 
