@@ -33,8 +33,8 @@ BuildArch:      noarch
 
 mkdir -p $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
 
-cp rpm/sailfishos-chum.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
-cp rpm/sailfishos-chum-testing.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
+cp ssu/sailfishos-chum.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
+cp ssu/sailfishos-chum-testing.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
 
 %files
 %defattr(-,root,root,-)
