@@ -36,6 +36,18 @@ mkdir -p $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
 cp ssu/sailfishos-chum.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
 cp ssu/sailfishos-chum-testing.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
 
+%post
+ssu ur || true
+
+%post testing
+ssu ur || true
+
+%postun
+ssu ur || true
+
+%postun testing
+ssu ur || true
+
 %files
 %defattr(-,root,root,-)
 %{_datadir}/ssu/features.d/sailfishos-chum.ini
