@@ -55,7 +55,8 @@ Overall submission model is as follows:
 - get the package compiled at OBS.
 
 - submit the package to `sailfishos:chum:testing` using "Submit
-  package" action at OBS.
+  package" action at OBS. Specific version has to be specified in
+  submission.
 
 - `sailfishos:chum:testing` maintainers will accept your request and
   check if it compiles in `:testing` repository. If all is fine, the
@@ -73,6 +74,10 @@ OS devices. This includes actively developed SFOS applications,
 discontinued SFOS applications, tools and libraries missing on SFOS as
 distributed by Jolla. Depending on the type of software, recommended
 ways of submission vary, as described below.
+
+After the successful submission, updates are handled by changing
+version information at OBS service file in `sailfishos:chum:testing`,
+checking that it compiles, and promotion to `sailfishos:chum`.
 
 
 ### Asking for help
@@ -135,7 +140,7 @@ upstream as submodule and packaging scripts/patches into the packaging
 repository.
 
 
-## FAQ
+## Q&A
 
 - My software requires specific SFOS versions, can I still use Chum
   repositories? Yes, you can. You would just have to disable the
