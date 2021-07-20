@@ -146,6 +146,13 @@ repository.
   versions and architectures of SFOS that are not supported in OBS
   package Meta settings. Example: see Pure Maps.
 
+- Can I build differently depending on the Sailfish version?  Yes you
+  can.  You can use the RPM macro sailfishos_version to build differently
+  depending on the release.  This works the same as for other 
+  distributions so your .spec can be cross distro.  See
+  https://en.opensuse.org/openSUSE:Build_Service_cross_distribution_howto
+  for more information.
+  
 - Can I use the compiled RPMs of my software to upload it to Jolla
   Store? No, you cannot as compiled RPMs have a vendor set to `chum`,
   which is not allowed in the store. However, it is easy to setup your
