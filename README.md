@@ -20,7 +20,7 @@ of required libraries, reduce duplication of the work by keeping the
 packages up to date, and get a clear overview of missing software.
 
 The repository is located at OBS:
-- https://build.merproject.org/project/show/sailfishos:chum
+- https://build.sailfishos.org/project/show/sailfishos:chum
 
 This repository at GitHub is used for filing general issues and
 publishing documentation.
