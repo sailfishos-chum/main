@@ -138,7 +138,6 @@ approach as is used for the most of Sailfish OS core packages: adding
 upstream as submodule and packaging scripts/patches into the packaging
 repository.
 
-
 ## Q&A
 
 - My software requires specific SFOS versions, can I still use Chum
@@ -166,3 +165,9 @@ repository.
   prevent users from distinguishing whether the software was installed
   from chum repository or came from some other source. For a way to
   compile the packages using OBS, see the response above.
+
+- Are there limitations on what software can be packaged? Yes, in general 
+  we only want software that is distributed via an OSI approved license to
+  be built and shipped on OBS.  There may be exceptions like some firmware 
+  blobs but in general, follow the guiddance at:
+  https://en.opensuse.org/openSUSE:Build_Service_application_blacklist
