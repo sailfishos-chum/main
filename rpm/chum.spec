@@ -43,9 +43,11 @@ ssu ur || true
 ssu ur || true
 
 %postun
+rm -f /var/cache/ssu/features.ini || true
 ssu ur || true
 
 %postun testing
+rm -f /var/cache/ssu/features.ini || true
 ssu ur || true
 
 %files
