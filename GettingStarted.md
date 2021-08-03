@@ -22,15 +22,15 @@ steps:
    * eg harbour-mypackage
 3. You now need to add files to the package to allow OBS to get the source and
 build it.  Create a file on your computer called `_service` with the following content:
-```
-<services>
-    <service name="tar_git">
-    <param name="url">URL TO PROJECT</param>
-    <param name="branch">master</param>
-    <param name="revision"></param>
-    </service>
-</services>`
-```
+    ```
+    <services>
+        <service name="tar_git">
+        <param name="url">URL TO PROJECT</param>
+        <param name="branch">master</param>
+        <param name="revision"></param>
+        </service>
+    </services>`
+    ```
    And specify at least the URL.  If you want to build another branch, change the 
    branch name, and if you want to build a particular revision, specify a git hash
    or tag in the revision.
@@ -47,32 +47,32 @@ These can be added using a UI but it is easier to add them manually.
    Note, dont confuse this with the package Meta configuration, the nanes are the same
 2. You will be presented with an XML description of the target repositories.  Between
    the ```<project> </project>``` tags, add the following:
-```
-<repository name="sailfish_latest_i486">
-    <path project="sailfishos:latest" repository="latest_i486"/>
-    <arch>i586</arch>
-</repository>
-<repository name="sailfish_latest_armv7hl">
-    <path project="sailfishos:latest" repository="latest_armv7hl"/>
-    <arch>armv8el</arch>
-</repository>
-<repository name="sailfish_latest_aarch64">
-    <path project="sailfishos:latest" repository="latest_aarch64"/>
-    <arch>aarch64</arch>
-</repository>
-<repository name="sailfish_4.1.0.24_armv7hl">
-    <path project="sailfishos:4.1.0.24" repository="latest_armv7hl"/>
-    <arch>armv8el</arch>
-</repository>
-<repository name="sailfish_4.1.0.24_aarch64">
-    <path project="sailfishos:4.1.0.24" repository="latest_aarch64"/>
-    <arch>aarch64</arch>
-</repository>
-<repository name="sailfish_4.1.0.24_i486">
-    <path project="sailfishos:4.1.0.24" repository="latest_i408"/>
-    <arch>i586</arch>
-</repository>
-```
+    ```
+    <repository name="sailfish_latest_i486">
+        <path project="sailfishos:latest" repository="latest_i486"/>
+        <arch>i586</arch>
+    </repository>
+    <repository name="sailfish_latest_armv7hl">
+        <path project="sailfishos:latest" repository="latest_armv7hl"/>
+        <arch>armv8el</arch>
+    </repository>
+    <repository name="sailfish_latest_aarch64">
+        <path project="sailfishos:latest" repository="latest_aarch64"/>
+        <arch>aarch64</arch>
+    </repository>
+    <repository name="sailfish_4.1.0.24_armv7hl">
+        <path project="sailfishos:4.1.0.24" repository="latest_armv7hl"/>
+        <arch>armv8el</arch>
+    </repository>
+    <repository name="sailfish_4.1.0.24_aarch64">
+        <path project="sailfishos:4.1.0.24" repository="latest_aarch64"/>
+        <arch>aarch64</arch>
+    </repository>
+    <repository name="sailfish_4.1.0.24_i486">
+        <path project="sailfishos:4.1.0.24" repository="latest_i408"/>
+        <arch>i586</arch>
+    </repository>
+    ```
    This will create build targets for the 4.1 and latest SaifishOS releases for
    all supported architectures.
 3. Click "Save Changes", navigate back to the project overview, and you should see
