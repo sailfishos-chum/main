@@ -9,7 +9,7 @@ be set up.
 
 When your account is set up, you will have a "Home Project".  This is where
 you can start creating packages.  The URL for your home project will be:
-https://build.merproject.org/project/show/home:<username>
+https://build.sailfishos.org/project/show/home:<username>
 
 ## Creating a package on OBS
 
@@ -19,24 +19,22 @@ steps:
 
 1. Click "Create Package"
 2. On the new package page, give the package a name and click "Save Changes"
-   * eg harbour-mypackage<br>
-You now need to add files to the package to allow OBS to get the source and
-build it.
-3. Create a file on your computer called _service with th e following content:
-        <services>
-          <service name="tar_git">
-            <param name="url">URL TO PROJECT</param>
-            <param name="branch">master</param>
-            <param name="revision"></param>
-            <param name="token"/>
-            <param name="debian">N</param>
-            <param name="dumb">N</param>
-          </service>
-        </services>`
-  And specify at least the URL.  If you want to build another branch, change the 
-  branch name, and if you want to build a particular revision, specify a git hash
-  or tag in the revision.
-4. Back on OBS, click "Add File" then "Browse" and select the _service file you
+   * eg harbour-mypackage
+3. You now need to add files to the package to allow OBS to get the source and
+build it.  Create a file on your computer called `_service` with the following content:
+```
+<services>
+    <service name="tar_git">
+    <param name="url">URL TO PROJECT</param>
+    <param name="branch">master</param>
+    <param name="revision"></param>
+    </service>
+</services>`
+```
+   And specify at least the URL.  If you want to build another branch, change the 
+   branch name, and if you want to build a particular revision, specify a git hash
+   or tag in the revision.
+4. Back on OBS, click "Add File" then "Browse" and select the `_service` file you
    just created and "Save Changes"
 5. If all goes well, OBS will fetch the source code.
 
@@ -48,43 +46,45 @@ These can be added using a UI but it is easier to add them manually.
 1. Click "Advanced" and "Meta"<br>
    Note, dont confuse this with the package Meta configuration, the nanes are the same
 2. You will be presented with an XML description of the target repositories.  Between
-   the <project> </project> tags, add the following:
-        <repository name="sailfish_latest_i486">
-            <path project="sailfishos:latest" repository="latest_i486"/>
-            <arch>i586</arch>
-        </repository>
-        <repository name="sailfish_latest_armv7hl">
-            <path project="sailfishos:latest" repository="latest_armv7hl"/>
-            <arch>armv8el</arch>
-        </repository>
-        <repository name="sailfish_latest_aarch64">
-            <path project="sailfishos:latest" repository="latest_aarch64"/>
-            <arch>aarch64</arch>
-        </repository>
-        <repository name="sailfish_4.1.0.24_armv7hl">
-            <path project="sailfishos:4.1.0.24" repository="latest_armv7hl"/>
-            <arch>armv8el</arch>
-        </repository>
-        <repository name="sailfish_4.1.0.24_aarch64">
-            <path project="sailfishos:4.1.0.24" repository="latest_aarch64"/>
-            <arch>aarch64</arch>
-        </repository>
-        <repository name="sailfish_4.1.0.24_i486">
-            <path project="sailfishos:4.1.0.24" repository="latest_i408"/>
-            <arch>i586</arch>
-        </repository>`
+   the ```<project> </project>``` tags, add the following:
+```
+<repository name="sailfish_latest_i486">
+    <path project="sailfishos:latest" repository="latest_i486"/>
+    <arch>i586</arch>
+</repository>
+<repository name="sailfish_latest_armv7hl">
+    <path project="sailfishos:latest" repository="latest_armv7hl"/>
+    <arch>armv8el</arch>
+</repository>
+<repository name="sailfish_latest_aarch64">
+    <path project="sailfishos:latest" repository="latest_aarch64"/>
+    <arch>aarch64</arch>
+</repository>
+<repository name="sailfish_4.1.0.24_armv7hl">
+    <path project="sailfishos:4.1.0.24" repository="latest_armv7hl"/>
+    <arch>armv8el</arch>
+</repository>
+<repository name="sailfish_4.1.0.24_aarch64">
+    <path project="sailfishos:4.1.0.24" repository="latest_aarch64"/>
+    <arch>aarch64</arch>
+</repository>
+<repository name="sailfish_4.1.0.24_i486">
+    <path project="sailfishos:4.1.0.24" repository="latest_i408"/>
+    <arch>i586</arch>
+</repository>
+```
    This will create build targets for the 4.1 and latest SaifishOS releases for
-   all supported archutectures.
+   all supported architectures.
 3. Click "Save Changes", navigate back to the project overview, and you should see
    the build status for each target on the right hand side.
 4. You can click on the package name, and then click on the build target status to
    see the current build log.
   
-## Submitting your package to saailfishos:chum:testing
+## Submitting your package to sailfishos:chum:testing
 
-Once you are happyy your builds are working, you can submit it for inclusion to chum:testing.
+Once you are happy your builds are working, you can submit it for inclusion to chum:testing.
 
-1. Naviate to the package, and click "Submit Package"
+1. Navigate to the package, and click "Submit Package"
 2. Enter the target project as `sailfishos:chum:testing`
 3. Click Ok
 
@@ -99,5 +99,16 @@ branch for personal use, and a specific revision to be submitted to chum.
   on your device
 * To re-trigger OBS to download the latest code, click the "Trigger Service" link in the package
 * You can configure OBS to not build certain packages against certain repositories, or disable
-  certain projects from being published.  It is very flexible.  This is available from the "Repsitories"
+  certain projects from being published.  It is very flexible.  This is available from the "Repositories"
   link.
+* OBS will resolve dependencies during the build if packages are available in either the current project or 
+  the build target.  If you want to build a package in your home project against other packages which are only
+  in chum (or another repository), then that can be added to the repository configuration with code such 
+  as the following in the project "Meta" configuration:
+```
+  <repository name="sailfish_latest_armv7hl">
+    <path project="sailfishos:latest" repository="latest_armv7hl"/>
+    <path project="sailfishos:chum" repository="4.1.0.24_armv7hl"/>
+    <arch>armv8el</arch>
+  </repository>
+```
