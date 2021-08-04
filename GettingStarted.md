@@ -14,8 +14,17 @@ https://build.sailfishos.org/project/show/home:<username>
 ## Creating a package on OBS
 
 Projects contain packages which are built against target repositories
-(sailfish versions).  To create your first package, perform the following
-steps:
+(sailfish versions, not source/git respoitories).
+
+### Prerequisites
+
+To build on OBS, the source repository must contain a .spec file for building the RPM.
+This will generally be the case for projects created using the Sailfish SDK.  The name
+of the .spec should also match the package name below and be in the rpm/ subfolder.
+
+### Creating a Package
+
+To create your first package, perform the following steps:
 
 1. Click "Create Package"
 2. On the new package page, give the package a name and click "Save Changes"
