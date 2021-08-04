@@ -97,7 +97,7 @@ Once you are happy your builds are working, you can submit it for inclusion to c
 2. Enter the target project as `sailfishos:chum:testing`
 3. Click Ok
 
-For packages submitted to chum, it is probably best to specify a particular git revision to be built.
+For packages submitted to chum, please specify a particular git revision to be built (sha or tag).
 For this reason, you may want to set up your home project with builds for your master
 branch for personal use, and a specific revision to be submitted to chum.
 
