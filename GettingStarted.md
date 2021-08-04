@@ -53,7 +53,7 @@ Back at the home project on OBS, you will require target repositories to build a
 These can be added using a UI but it is easier to add them manually.
 
 1. Click "Advanced" and "Meta"<br>
-   Note, dont confuse this with the package Meta configuration, the nanes are the same
+   Note, don't confuse this with the package Meta configuration, the names are the same.
 2. You will be presented with an XML description of the target repositories.  Between
    the ```<project> </project>``` tags, add the following:
     ```
