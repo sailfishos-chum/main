@@ -49,7 +49,18 @@ rpm -qa --queryformat '%{vendor}:%{name}\n' | grep chum
 
 ## How to use these repositories: developers
 
-Overall submission model is as follows:
+There are no major limitations imposed on the submitted software. Main
+limitation is that it should not interfere with any software
+distributed by Jolla as a part of Sailfish OS. This includes updating
+libraries distributed as a part of Sailfish OS.
+
+All types of software is welcome as long as it can be used on Sailfish
+OS devices. This includes actively developed SFOS applications,
+discontinued SFOS applications, tools and libraries missing on SFOS as
+distributed by Jolla. Depending on the type of software, recommended
+ways of submission vary, as described in the sections below.
+
+Overall submission model is as follows. For the first submission:
 
 - get the package compiled at OBS.
 
@@ -63,20 +74,20 @@ Overall submission model is as follows:
   something is wrong, maintainers will work with you to resolve the
   issues.
 
-There are no major limitations imposed on the submitted software. Main
-limitation is that it should not interfere with any software
-distributed by Jolla as a part of Sailfish OS. This includes updating
-libraries distributed as a part of Sailfish OS.
+After the successful submission, you will be made maintainer of your
+package in `sailfishos:chum:testing`. This allows to handle updates in
+a simplified manner:
 
-All types of software is welcome as long as it can be used on Sailfish
-OS devices. This includes actively developed SFOS applications,
-discontinued SFOS applications, tools and libraries missing on SFOS as
-distributed by Jolla. Depending on the type of software, recommended
-ways of submission vary, as described below.
+- you would change version information at OBS service file in
+  `sailfishos:chum:testing`
 
-After the successful submission, updates are handled by changing
-version information at OBS service file in `sailfishos:chum:testing`,
-checking that it compiles, and promotion to `sailfishos:chum`.
+- check that it compiles in `:testing`
+
+- submit from `sailfishos:chum:testing` for promotion to
+  `sailfishos:chum`.
+
+For reference, see [Maintainers](Maintainers.md) for list of checks
+performed by maintainers.
 
 
 ### Asking for help
@@ -85,6 +96,8 @@ If something is not clear or you get stuck in the process, feel free
 to ask for help via IRC (#sailfishos),
 [Sailfish forum](https://forum.sailfishos.org), or filing
 issues over here.
+
+As OBS primer, see [GettingStarted](GettingStarted.md).
 
 You can ask someone else to package the software as well. Just be
 aware that for this effort to work out, we need many to contribute.
