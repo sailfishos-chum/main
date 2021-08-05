@@ -86,7 +86,7 @@ a simplified manner:
 - submit from `sailfishos:chum:testing` for promotion to
   `sailfishos:chum`.
 
-For reference, see [Maintainers](Maintainers.md) for list of checks
+For reference, see [Maintainer's tasks](Maintainer.md) for list of checks
 performed by maintainers.
 
 
