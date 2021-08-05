@@ -78,7 +78,7 @@ These can be added using a UI but it is easier to add them manually.
         <arch>aarch64</arch>
     </repository>
     <repository name="sailfish_4.1.0.24_i486">
-        <path project="sailfishos:4.1.0.24" repository="latest_i408"/>
+        <path project="sailfishos:4.1.0.24" repository="latest_i486"/>
         <arch>i586</arch>
     </repository>
     ```
