@@ -102,6 +102,9 @@ and do not use webhooks, so that packages in chum do not automatically update.
 For this reason, you may want to set up your home project with builds for your master
 branch for personal use, and a specific revision to be submitted to chum.
 
+Please ensure that the license specified in the .spec matches that of the source repository
+and that it follows the format used in https://github.com/sailfishos/rpmlint/blob/master/rpm/sailfish.toml#L152
+
 ## Other useful notes
 
 * You can create sub-projects in your home project to group builds together
