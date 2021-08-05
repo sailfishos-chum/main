@@ -9,6 +9,8 @@ On initial submission, maintainers are expected to check:
 
 - license in RPM SPEC is open source and matches software license in
   repository or submitted archive
+  
+- license tag is one of https://github.com/sailfishos/rpmlint/blob/master/rpm/sailfish.toml#L152
 
 - no binary blobs, such as precompiled libraries or applications, are
   submitted as a part of submission. Bundled databases or similar are
