@@ -37,9 +37,11 @@ cp ssu/sailfishos-chum.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
 cp ssu/sailfishos-chum-testing.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
 
 %post
+rm -f /var/cache/ssu/features.ini || true
 ssu ur || true
 
 %post testing
+rm -f /var/cache/ssu/features.ini || true
 ssu ur || true
 
 %postun
