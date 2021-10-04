@@ -30,19 +30,30 @@ Origin of "chum": see http://en.wikipedia.org/wiki/Chumming
 
 ## How to use these repositories: users
 
-At the moment of writing, there is no GUI for selecting packages for
-installation and it has to be done through command line tools
-(`zypper` or `pkcon`).
+There are two ways of using these repositories:
+- through command line tools (`zypper` or `pkcon`);
+- with the [GUI application](https://github.com/sailfishos-chum/sailfishos-chum-gui)
+
+The latter is at an early stage of development and has the most
+basic functionality. So be prepared to use the command line anyway:wink:
+
+### Where to get the packages
+
+You can download the required RPM files directly from
+[OBS](https://build.sailfishos.org/project/show/sailfishos:chum)
+or use this helper page [chumrpm.netlify.app](https://chumrpm.netlify.app/).
+
+### Command line tools
 
 To use the repositories on your device, users would have to
 - install package `sailfishos-chum`;
-- refresh software cache on device (`devel-su zypper ref`),
+- refresh software cache on device (`devel-su zypper ref`);
 - install the software (`devel-su zypper in ...`)
 
 As all software is compiled with the vendor set to `chum`, it is easy
 to find out which packages are installed from this repository by running
 
-```
+```sh
 rpm -qa --queryformat '%{vendor}:%{name}\n' | grep chum
 ```
 
