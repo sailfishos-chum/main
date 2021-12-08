@@ -7,25 +7,25 @@ The standard for app store metadata is Appstream.  While it is a goal to investi
 Better camera application
 
 %if "%{?vendor}" == "chum"
-    packagename: Advanced Camera
-    type: desktop-application
-    developername: Adam Pigg
-    categories:
-     - Media
-     - Video
-    custom:
-     - repotype: github
-     - repo: https://github.com/piggz/harbour-advanced-camera
-    icon: https://raw.githubusercontent.com/piggz/harbour-advanced-camera/master/harbour-advanced-camera.svg
-    screenshots:
-     - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot1.png
-     - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot2.png
-     - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot3.png
-    url:
-     - homepage: https://github.com/piggz/harbour-advanced-camera
-     - help: https://github.com/piggz/harbour-advanced-camera/discussions
-     - bugtracker: https://github.com/piggz/harbour-advanced-camera/issues
-     - donation: https://www.paypal.me/piggz
+PackageName: Advanced Camera
+Type: desktop-application
+DeveloperName: Adam Pigg
+Categories:
+ - Media
+ - Video
+Custom:
+ - RepoType: github
+ - Repo: https://github.com/piggz/harbour-advanced-camera
+Icon: https://raw.githubusercontent.com/piggz/harbour-advanced-camera/master/harbour-advanced-camera.svg
+Screenshots:
+ - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot1.png
+ - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot2.png
+ - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot3.png
+Url:
+ - Homepage: https://github.com/piggz/harbour-advanced-camera
+ - Help: https://github.com/piggz/harbour-advanced-camera/discussions
+ - Bugtracker: https://github.com/piggz/harbour-advanced-camera/issues
+ - Donation: https://www.paypal.me/piggz
 %endif
 ```
 
@@ -43,7 +43,7 @@ Note: All fields are optional
 | Custom<br>\-RepoType<br>\-Repo | Two custom fields are suported, RepoType and Repo. RepoType can be github or gitlab, and Repo is the URL of the repository. | If these are set, data for the store will be retrieved automatically where possible                                                                                                                                                                   |
 | Icon                           | URL to an image used in the store for the application icon                                                                  | If not set, no icon will be visible                                                                                                                                                                                                                   |
 | Screenshots                    | Array of URLs to screenshots of the application                                                                             | If not set, no screenshots will be displayed                                                                                                                                                                                                          |
-| URL                            | Array of other URLs for the store entry as below                                                                            |                                                                                                                                                                                                                                                       |
+| Url                            | Array of other URLs for the store entry as below                                                                            |                                                                                                                                                                                                                                                       |
 | \-Homepage                     | URL to application homepage                                                                                                 | Overrides repo URL if set                                                                                                                                                                                                                             |
 | \-Help                         | URL to application help, eg a forum                                                                                         | If not set, and a repo is set, the repo discussion page will be used                                                                                                                                                                                  |
 | \-Bugtracker                   | URL to bug tracker to allow user to file bugs                                                                               | If not set, and a repo is set, the repo issues page will be used                                                                                                                                                                                      |
