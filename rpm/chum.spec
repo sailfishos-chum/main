@@ -1,12 +1,12 @@
 Summary:        Sailfish OS Community repository
 License:        MIT
 Name:           sailfishos-chum
-Version:        1.0.0
+Version:        1.1.0
 Release:        1
 Provides:       sailfishos-chum-repository
 Group:          System
 Source0:        %{name}-%{version}.tar.bz2
-Requires:	ssu
+Requires:	    ssu
 Conflicts:      sailfishos-chum-testing
 BuildArch:      noarch
 
@@ -25,37 +25,31 @@ BuildArch:      noarch
 %description testing
 %{summary}.
 
-
 %prep
 %setup -q -n %{name}-%{version}
 
+%build
+
 %install
 
-mkdir -p $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
+%files
 
-cp ssu/sailfishos-chum.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
-cp ssu/sailfishos-chum-testing.ini $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
-
-%post
+%posttrans
 rm -f /var/cache/ssu/features.ini || true
+ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
 ssu ur || true
 
-%post testing
+%posttrans testing
 rm -f /var/cache/ssu/features.ini || true
+ssu ar sailfishos-chum-testing 'https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%%(release)_%%(arch)/'
 ssu ur || true
 
 %postun
+ssu rr sailfishos-chum || true
 rm -f /var/cache/ssu/features.ini || true
 ssu ur || true
 
 %postun testing
+ssu rr sailfishos-chum-testing || true
 rm -f /var/cache/ssu/features.ini || true
 ssu ur || true
-
-%files
-%defattr(-,root,root,-)
-%{_datadir}/ssu/features.d/sailfishos-chum.ini
-
-%files testing
-%defattr(-,root,root,-)
-%{_datadir}/ssu/features.d/sailfishos-chum-testing.ini
