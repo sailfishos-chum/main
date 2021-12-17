@@ -34,6 +34,8 @@ BuildArch:      noarch
 
 %files
 
+%files testing
+
 %posttrans
 rm -f /var/cache/ssu/features.ini || true
 ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
