@@ -1,7 +1,7 @@
 Summary:        Sailfish OS Community repository
 License:        MIT
 Name:           sailfishos-chum
-Version:        1.1.0
+Version:        0.3.0
 Release:        1
 Provides:       sailfishos-chum-repository
 Group:          System
