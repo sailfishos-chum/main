@@ -15,6 +15,8 @@ On initial submission, maintainers are expected to check:
 - no binary blobs, such as precompiled libraries or applications, are
   submitted as a part of submission. Bundled databases or similar are
   allowed.
+  
+- Package does not conflict (ie replace) a system (from Jolla) package
 
 After checks,
 
