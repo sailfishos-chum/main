@@ -1,4 +1,4 @@
-Summary:        Sailfish OS Community repository
+Summary:        SailfishOS:Chum community repository
 License:        MIT
 Name:           sailfishos-chum
 Version:        0.3.0
@@ -6,7 +6,7 @@ Release:        1
 Provides:       sailfishos-chum-repository
 Group:          System
 Source0:        %{name}-%{version}.tar.bz2
-Requires:	    ssu
+Requires:       ssu
 Conflicts:      sailfishos-chum-testing
 BuildArch:      noarch
 
@@ -14,7 +14,7 @@ BuildArch:      noarch
 %{summary}.
 
 %package testing
-Summary:        Sailfish OS Community repository: Testing repository
+Summary:        SailfishOS:Chum community repository: Testing repository
 License:        MIT
 Provides:       sailfishos-chum-repository
 Group:          System
