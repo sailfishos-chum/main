@@ -1,35 +1,34 @@
-# Maintainer's tasks on submission
+## Maintainer's tasks on package submission to SailfishOS:Chum
 
-On initial submission, maintainers are expected to check:
+On initial submission of a package, maintainers are expected to check that:
 
-- `_service` file has specific git tag or commit ID. Alternative is
-  source submission via compressed archive
+- `_service` file contains a specific git tag or commit ID (hash).  Alternative is source submission via compressed
+  archive.
 
-- `_service` should not include any webhook
+- `_service` file must not contain a webhook.
 
-- license in RPM SPEC is open source and matches software license in
-  repository or submitted archive
+- License in rpm spec file is [approved by OSI](https://opensource.org/licenses) and matches the software license in
+  the source code repository or the submitted archive.
   
-- license tag is one of https://github.com/sailfishos/rpmlint/blob/master/rpm/sailfish.toml#L152
+- License tag in rpm spec file is one of
+  [github.com/sailfishos/rpmlint/blob/master/rpm/sailfish.toml#L150-L459](https://github.com/sailfishos/rpmlint/blob/master/rpm/sailfish.toml#L150-L459).
 
-- no binary blobs, such as precompiled libraries or applications, are
-  submitted as a part of submission. Bundled databases or similar are
-  allowed.
+- No binary blobs, such as precompiled libraries, applications or other executable files, are part of the package submission.
+  Bundled databases or similar are allowed.
   
-- Package does not conflict (ie replace) a system (from Jolla) package
+- Package does not conflict with (e.g., replace) any package from Jolla's repositories for Sailfish&nbsp;OS.
 
-After checks,
+After these checks have been successful,
 
-- accept the submission to `sailfishos:chum:testing`
+- accept the submission of the package to `sailfishos:chum:testing`.
 
-- make the submitter a maintainer for a package in
-  `sailfishos:chum:testing`
+- make the submitter a maintainer for the package in `sailfishos:chum:testing`.
 
-- if some versions of SFOS are failing, decide together with the
-  submitter whether to disable those builds or adjust the package.
+- if building the package fails for some versions of SFOS, decide together with the submitter
+  whether to disable those build targets or to adjust the package.
 
-- with all compilation issues resolved, promote package from
-  `sailfishos:chum:testing` to `sailfishos:chum`.
+- with all compilation issues resolved, promote the package from `sailfishos:chum:testing`
+  to `sailfishos:chum`.
 
-- if some SFOS versions were disabled for a package, disable them in
-  `sailfishos:chum`
+- if some SFOS versions or architectures were disabled for a package in `sailfishos:chum:testing`,
+  also disable them in `sailfishos:chum`.
