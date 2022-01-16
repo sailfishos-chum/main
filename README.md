@@ -14,7 +14,8 @@ reproducible manner directly from its source code. The source code used
 for compiling and packaging is submitted by developers to OBS (Open
 Build Service), which generates multiple RPM files for different
 combinations of hardware architectures and Sailfish&nbsp;OS release
-versions.<br />
+versions.
+
 This scheme ensures that the complete source code of all packages at 
 SailfishOS:Chum is available and inspectable there, and that all
 packages are generated solely from this source code. Hence all software
@@ -150,7 +151,8 @@ repository.
 
 - Can I use the RPMs of my software built at SailfishOS:Chum to upload them to OpenRepos or elsewhere?
   
-  While you could do that, it is not recommended to re-distribute RPMs from SailfishOS:Chum because they all have the vendor set to `chum`, which will prevent users from distinguishing whether a package was directly installed from the SailfishOS:Chum repository or from some other package repository.<br />
+  While you could do that, it is not recommended to re-distribute RPMs from SailfishOS:Chum because they all have the vendor set to `chum`, which will prevent users from distinguishing whether a package was directly installed from the SailfishOS:Chum repository or from some other package repository.
+  
   For a way to automatically build packages at the Sailfis&nbsp;OS OBS utilising SailfishOS:Chum for dependencies, but having the vendor not set to `chum`, see the previous answer.
 
 - Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?
