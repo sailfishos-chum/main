@@ -31,7 +31,7 @@ Sailfish&nbsp;OS OBS. Additionally this eases tracing multiple and
 potentially layered dependencies ("dependency chains") which is crucial
 for keeping the software supply chains of complex packages up-to-date.
 
-The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:
+The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:<br />
 https://build.sailfishos.org/project/show/sailfishos:chum
 
 This repository at GitHub is used for filing general issues and
@@ -130,33 +130,28 @@ repository.
 
 ## SailfishOS:Chum FAQ
 
-- My software requires specific SFOS versions, can I still use the SailfishOS:Chum repository?
-  
+- My software requires specific SFOS versions, can I still use the SailfishOS:Chum repository?<br />
   Yes, you can.
   You simply have to disable the unsupported SFOS versions and / or architectures in the OBS Meta settings for your package.
   Take a look at [Pure Maps' OBS Meta settings](https://build.sailfishos.org/package/meta/sailfishos:chum/pure-maps) as an example.
 
-- Can I build differently depending on the Sailfish&nbsp;OS version?
-  
+- Can I build differently depending on the Sailfish&nbsp;OS version?<br />
   Yes, you can.
   You can use the RPM macro `sailfishos_version` to build differently depending on the release version.
   This works in the same manner as for other Linux distributions, so you can support multiple Linux distributions with a single spec file.
   For details, see [openSUSE:Build_Service_cross_distribution_howto](https://en.opensuse.org/openSUSE:Build_Service_cross_distribution_howto).
   
-- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to the Jolla Store?
-  
+- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to the Jolla Store?<br />
   No, you cannot, because RPMs built at SailfishOS:Chum have the vendor set to `chum`, which is not allowed at the Jolla Store ("harbour").
   However, it is easy to set up a personal repository at the Sailfish&nbsp;OS OBS, configure `sailfishos:chum` to provide the required dependencies and re-build your packages at your own repository.
   As a result, you will get automated builds for all architectures wanted without the vendor set to `chum` in your RPMs.
 
-- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to OpenRepos or elsewhere?
-  
+- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to OpenRepos or elsewhere?<br />
   While you could do that, it is not recommended to re-distribute RPMs from SailfishOS:Chum because they all have the vendor set to `chum`, which will prevent users from distinguishing whether a package was directly installed from the SailfishOS:Chum repository or from some other package repository.
   
-  For a way to automatically build packages at the Sailfis&nbsp;OS OBS utilising SailfishOS:Chum for dependencies, but having the vendor not set to `chum`, see the previous answer.
+  For a way to automatically build packages at the Sailfish&nbsp;OS OBS utilising SailfishOS:Chum for dependencies, but having the vendor not set to `chum`, see the previous answer.
 
-- Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?
-  
+- Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?<br />
   Yes, in general solely software which is distributed under an [OSI approved license](https://opensource.org/licenses) might be submitted to the Sailfish&nbsp;OS OBS.
   Exceptions may be made in special cases as firmware blobs, but in general this guidance shall be obeyed:
   [openSUSE:Build_Service_application_blacklist](https://en.opensuse.org/openSUSE:Build_Service_application_blacklist)
