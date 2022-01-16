@@ -142,11 +142,11 @@ repository.
   However, it is easy to set up a personal repository at the Sailfish&nbsp;OS OBS, configure `sailfishos:chum` to provide the required dependencies and re-build your packages at your own repository.
   As a result, you will get automated builds for all architectures wanted without the vendor set to `chum` in your RPMs.
 
-- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to OpenRepos?<br />
-  While you could do that, it is not recommended to re-distribute RPMs from SailfishOS:Chum because they all have the vendor set to `chum`, which will prevent users from distinguishing whether a package was directly installed from the SailfishOS:Chum repository or via some other package repository.
+- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to OpenRepos or elsewhere?<br />
+  While you could do that, it is not recommended to re-distribute RPMs from SailfishOS:Chum because they all have the vendor set to `chum`, which will prevent users from distinguishing whether a package was directly installed from the SailfishOS:Chum repository or from some other package repository.<br />
   For a way to automatically build packages at the Sailfis&nbsp;OS OBS utilising SailfishOS:Chum for dependencies, but having the vendor not set to `chum`, see the previous answer.
 
 - Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?<br />
-  Yes, in general solely software which is distributed under an [OSI approved license](https://opensource.org/licenses) might be submitted to the Sailfis&nbsp;OS OBS.
+  Yes, in general solely software which is distributed under an [OSI approved license](https://opensource.org/licenses) might be submitted to the Sailfish&nbsp;OS OBS.
   Exceptions may be made in special cases as firmware blobs, but in general this guidance shall be obeyed:
   [openSUSE:Build_Service_application_blacklist](https://en.opensuse.org/openSUSE:Build_Service_application_blacklist)
