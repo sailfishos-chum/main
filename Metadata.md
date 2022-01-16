@@ -1,6 +1,6 @@
 # Additional metadata for SailfishOS:Chum
 
-The basic specification for the additional metadata is that of Appstream.  While it is a goal to leverage Appstream metadata directly for SailfishOS:Chum packages and the SailfishOS:Chum GUI-client app, we are not at that stage yet, and are instead using a method of embedding metadata in the "Description" field of the rpm spec file.  An example of how this is done follows:
+The basic specification for the additional metadata is that of AppStream.  While it is a goal to leverage AppStream metadata directly for SailfishOS:Chum packages and the SailfishOS:Chum GUI-client app, we are not at that stage yet, and are instead using a method of embedding metadata in the "Description" field of the rpm spec file.  An example of how this is done follows:
 ```
 %description
 Better camera application
@@ -32,17 +32,17 @@ Note: All fields are optional, and the example above does not use all possible f
 
 | Field name                 | Description                                                | Notes |
 | -------------------------- | ---------------------------------------------------------- | ----- |
-| PackageName:               | Human readable application name                            | If not set, it is calculated from the package ID.  Does not follow Appstream specification due to clash with OBS tar\_git service. |
-| Type:                      | Basic application type                                     | Defaults to `generic`, unless the package name starts with `harbour-`, then it defaults to `desktop-application`.  See [https://www.freedesktop.org/software/appstream/docs/sect-AppStream-YAML.html#field-dep11-type](https://www.freedesktop.org/software/appstream/docs/sect-AppStream-YAML.html#field-dep11-type) for valid entries. |
+| PackageName:               | Human readable application name                            | If not set, it is calculated from the package ID.  Does not follow AppStream specification due to clash with OBS tar\_git service. |
+| Type:                      | Basic application type                                     | Defaults to `generic`, unless the package name starts with `harbour-`, then it defaults to `desktop-application`.  See [freedesktop.org:AppStream-docs:YAML-field-dep11](https://www.freedesktop.org/software/appstream/docs/sect-AppStream-YAML.html#field-dep11-type) for valid entries. |
 | DeveloperName:             | Developer's preferred name                                 | If not set, and a GitHub repository is set, then name will be automatically retrieved.  Note that such automatic retrieval is not supported for GitLab repositories. |
 | PackagerName:              | Name of the packager                                       | Use if different from the developer and is expected to be contacted for packaging issues. | 
-| Categories:                | List of categories in which the package will be displayed  | Defaults to `- Other`, see [https://www.freedesktop.org/software/appstream/docs/chap-CollectionData.html#tag-ct-categories](https://www.freedesktop.org/software/appstream/docs/chap-CollectionData.html#tag-ct-categories) for valid category tags. |
+| Categories:                | List of categories in which the package will be displayed  | Defaults to `- Other`; see [freedesktop.org:AppStream-docs:ct-categories](https://www.freedesktop.org/software/appstream/docs/chap-CollectionData.html#tag-ct-categories) for the general specification and [specifications.freedesktop.org:menu-spec:apa](https://specifications.freedesktop.org/menu-spec/latest/apa.html) for valid categories. |
 | Custom:                    | Root entry for custom repository fields                    |       |
 | &nbsp;&nbsp;Repo:          | URL of the source code repository                          | If `Repo:` is set, other URLs for SailfishOS:Chum GUI-client app will be automatically determined when possible (see `Url:` sub-fields).  Currently supported are GitHub and GitLab.com URLs in the form `https://github.com/<username>/<reponame>` and `https://gitlab.com/<username>/<reponame>`. |
-| &nbsp;&nbsp;PackagingRepo: | URL of the repository specifically used for packaging      | Is shown in the SailfishOS:Chum GUI-client as a web-link.  If `Repo:` is not set, it is used as a fallback for the GitHub and GitLab integration. |
-| Icon:                      | URL to an image used for the application icon              | If not set, no icon will be visible in the SailfisOS:Chum GUI-client app.  Supported file formats are SVG and PNG. |
-| Screenshots:               | Array of URLs to screenshots of the application            | If not set, no screenshots will be displayed. |
-| Url:                       | Root entry for additional URLs                             | These URL fields are displayed in the SailfisOS:Chum GUI-client app |
+| &nbsp;&nbsp;PackagingRepo: | URL of the repository specifically used for packaging      | Is shown in the SailfishOS:Chum GUI-client app as a web-link.  If `Repo:` is not set, it is used as a fallback for the GitHub and GitLab integration. |
+| Icon:                      | URL to an image used for the application icon              | If not set, no icon will be displayed in the SailfishOS:Chum GUI-client app for the package.  Supported file formats are SVG and PNG. |
+| Screenshots:               | Array of URLs to screenshots of the application            | If not set, no screenshots will be displayed for the package. |
+| Url:                       | Root entry for additional URLs                             | These URL fields are displayed in the SailfishOS:Chum GUI-client app. |
 | &nbsp;&nbsp;Homepage:      | URL to the application homepage                            | Overrides the `Repo:` URL if set.  This URL is probed for GitHub and GitLab support after probing the URL provided by custom field `Repo:`. |
 | &nbsp;&nbsp;Help:          | URL to an application help page, e.g., a forum             | If not set, and `Repo:` or `Homepage:` is set and points to GitHub, the GitHub discussion page will be used for projects which have it switched on. |
 | &nbsp;&nbsp;Bugtracker:    | URL to a bug tracker which allows users to file bugs       | If not set, and `Repo:` or `Homepage:` is set and points to supported repository type, the repository issues page will be used. |
