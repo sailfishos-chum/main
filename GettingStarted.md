@@ -9,7 +9,7 @@ If you are not using the Sailfish&nbsp;OS OBS yet, you shall obtain an account t
 When your account is set up, you will have a "Home Project".
 This is where you can start creating packages.
 The URL for your home project will be:<br />
-https://build.sailfishos.org/project/show/home:<username>
+https://build.sailfishos.org/project/show/home:<username\>
 
 ## Creating a package on OBS
 
