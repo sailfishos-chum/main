@@ -1,6 +1,6 @@
 # SailfishOS:Chum community repository: Documentation and issue tracker
 
-The SailfishOS:Chum community repository is providing collection of
+The SailfishOS:Chum community repository provides a collection of
 applications, tools and libraries compiled for various hardware
 architectures and Sailfish&nbsp;OS release versions.
 
@@ -26,11 +26,11 @@ system, collaboration between developers through common packaging of
 shared libraries etc. is fostered, duplication of work for keeping these
 common packages up-to-date is eliminated, and it becomes much easier to
 determine which pieces of software exist and which are missing at the
-Sailfish&nbsp;OS OBS. Additionally this eases to trace multiple and
+Sailfish&nbsp;OS OBS. Additionally this eases tracing multiple and
 potentially layered dependencies ("dependency chains") which is crucial
 for keeping the software supply chains of complex packages up-to-date.
 
-The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:<br />
+The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:
 https://build.sailfishos.org/project/show/sailfishos:chum
 
 This repository at GitHub is used for filing general issues and
@@ -53,12 +53,13 @@ The client app (GUI) for SailfishOS:Chum is available for easy installation at [
 
 ### How to deploy the configuration for command line tools
 
-For using the SailfishOS:Chum repository per command line tools, a `sailfishos-chum` helper RPM is available for easy installation also at [chumrpm.netlify.app](https://chumrpm.netlify.app/) (and additionally at the [SailfishOS:Chum repository](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum) proper), which solely provides an appropriate local repository configuration for utilising the SailfishOS:Chum repository.<br />
+For using the SailfishOS:Chum repository per command line tools, a `sailfishos-chum` helper RPM is available for easy installation also at [chumrpm.netlify.app](https://chumrpm.netlify.app/) (and additionally at the [SailfishOS:Chum repository](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum) proper), which solely provides an appropriate local repository configuration for utilising the SailfishOS:Chum repository.
+
 Note that installing the SailfishOS:Chum GUI-client deploys the same local repository configuration, so your device is already set for using the SailfishOS:Chum repository with the usual command line tools for package management, then.
 
-To utilise the SailfishOS:Chum repository per command line tools on your device, you have to …
+To utilise the SailfishOS:Chum repository using command line tools on your device, you have to …
 1. download either of the aforementioned packages `sailfishos-chum` or `sailfishos-chum-gui`.
-2. install it per file manager or as root user per `pkcon install-local sailfishos-chum[-gui]` or `zypper in sailfishos-chum[-gui]`.
+2. install it using a file manager or as root user by executing `pkcon install-local sailfishos-chum[-gui]-<version>.rpm` or `zypper in sailfishos-chum[-gui]-<version>.rpm`.
 3. refresh the software cache on your device as root user per `pkcon refresh` or `zypper ref`.
 4. install any software packages you like from the SailfishOS:Chum repository as root user per `pkcon install <package name>` or `zypper in <package name>`.
 
@@ -80,12 +81,14 @@ The overall process is as follows.
    - Make your software package successfully compile at the Sailfish&nbsp;OS OBS.
    - Submit your package to the SailfishOS:Chum testing repository `sailfishos:chum:testing` by using the "Submit package" action of OBS. A version has to be specified when submitting.
    - The `sailfishos:chum:testing` maintainers will accept or reject your request and check if your software package successfully builds at the SailfishOS:Chum testing repository. If all is fine, the package will be promoted to the main `sailfishos:chum` repository by the SailfishOS:Chum maintainers. If something went wrong, you will be notified to resolve the issue.
-2. After a successful initial submission, you will be made maintainer of your software package in the `sailfishos:chum:testing` repository.<br />This allows you to handle updates in a simplified manner:
+2. After a successful initial submission, you will be made maintainer of your software package in the `sailfishos:chum:testing` repository, which allows you to handle updates in a simplified manner:
    - For updating your package, update the source, then change the version information in the OBS service file at `sailfishos:chum:testing`.
    - Check that your software package successfully builds at the SailfishOS:Chum testing repository `sailfishos:chum:testing`.
    - Ultimately use the "Submit package" action to trigger promoting your package from `sailfishos:chum:testing` to `sailfishos:chum`.
 
 As a reference, see the [maintainer's tasks](Maintainer.md) document for a list of checks and balances performed by the SailfishOS:Chum maintainers.
+
+Also note the documentation for the [additional metadata for SailfishOS:Chum](Metadata.md) in rpm spec files.
 
 ### Asking for help
 
@@ -126,27 +129,32 @@ repository.
 
 ## SailfishOS:Chum FAQ
 
-- My software requires specific SFOS versions, can I still use the SailfishOS:Chum repository?<br />
+- My software requires specific SFOS versions, can I still use the SailfishOS:Chum repository?
+  
   Yes, you can.
   You simply have to disable the unsupported SFOS versions and / or architectures in the OBS Meta settings for your package.
   Take a look at [Pure Maps' OBS Meta settings](https://build.sailfishos.org/package/meta/sailfishos:chum/pure-maps) as an example.
 
-- Can I build differently depending on the Sailfish&nbsp;OS version?<br />
+- Can I build differently depending on the Sailfish&nbsp;OS version?
+  
   Yes, you can.
   You can use the RPM macro `sailfishos_version` to build differently depending on the release version.
   This works in the same manner as for other Linux distributions, so you can support multiple Linux distributions with a single spec file.
   For details, see [openSUSE:Build_Service_cross_distribution_howto](https://en.opensuse.org/openSUSE:Build_Service_cross_distribution_howto).
   
-- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to the Jolla Store?<br />
+- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to the Jolla Store?
+  
   No, you cannot, because RPMs built at SailfishOS:Chum have the vendor set to `chum`, which is not allowed at the Jolla Store ("harbour").
   However, it is easy to set up a personal repository at the Sailfish&nbsp;OS OBS, configure `sailfishos:chum` to provide the required dependencies and re-build your packages at your own repository.
   As a result, you will get automated builds for all architectures wanted without the vendor set to `chum` in your RPMs.
 
-- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to OpenRepos or elsewhere?<br />
+- Can I use the RPMs of my software built at SailfishOS:Chum to upload them to OpenRepos or elsewhere?
+  
   While you could do that, it is not recommended to re-distribute RPMs from SailfishOS:Chum because they all have the vendor set to `chum`, which will prevent users from distinguishing whether a package was directly installed from the SailfishOS:Chum repository or from some other package repository.<br />
   For a way to automatically build packages at the Sailfis&nbsp;OS OBS utilising SailfishOS:Chum for dependencies, but having the vendor not set to `chum`, see the previous answer.
 
-- Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?<br />
+- Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?
+  
   Yes, in general solely software which is distributed under an [OSI approved license](https://opensource.org/licenses) might be submitted to the Sailfish&nbsp;OS OBS.
   Exceptions may be made in special cases as firmware blobs, but in general this guidance shall be obeyed:
   [openSUSE:Build_Service_application_blacklist](https://en.opensuse.org/openSUSE:Build_Service_application_blacklist)
