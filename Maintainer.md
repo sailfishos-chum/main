@@ -1,14 +1,14 @@
 ## Maintainer's tasks on package submission to SailfishOS:Chum
 
-On initial submission of a package, maintainers are expected to check that:
+On initial submission of a package, maintainers are expected to check that …
 
-- `_service` file contains a specific git tag or commit ID (hash).  Alternative is source submission via compressed
-  archive.
+- `_service` file contains a specific git tag or commit ID (hash).
+  Alternative is source submission via compressed archive.
 
-- `_service` file must not contain a webhook.
+- `_service` file does not contain a webhook.
 
-- License in rpm spec file is [approved by OSI](https://opensource.org/licenses) and matches the software license in
-  the source code repository or the submitted archive.
+- License in rpm spec file is [approved by OSI](https://opensource.org/licenses) and
+  matches the software license in the source code repository or the submitted archive.
   
 - License tag in rpm spec file is one of
   [github.com/sailfishos/rpmlint/blob/master/rpm/sailfish.toml#L150-L459](https://github.com/sailfishos/rpmlint/blob/master/rpm/sailfish.toml#L150-L459).
@@ -18,7 +18,7 @@ On initial submission of a package, maintainers are expected to check that:
   
 - Package does not conflict with (e.g., replace) any package from Jolla's repositories for Sailfish&nbsp;OS.
 
-After these checks have been successful,
+After these checks have been successful, …
 
 - accept the submission of the package to `sailfishos:chum:testing`.
 
