@@ -113,7 +113,7 @@ and that it follows one of the formats at https://github.com/sailfishos/rpmlint/
 * You can configure OBS to not build certain packages against certain repositories, or disable
   certain projects from being published.  It is very flexible.  This is available from the "Repositories"
   tab.
-* OBS will resolve dependencies during building a package, if dependency packages are available in 
+* OBS will resolve dependencies when building a package, if dependency packages are available in 
   either the current project or the build target.
   If you want to build a package in your home project against other packages, which are only available 
   in SailfishOS:Chum (or another repository), then these can be added to the repository configuration
