@@ -48,7 +48,7 @@ There are two different ways of using the SailfishOS:Chum repository:
 - with the [SailfishOS:Chum GUI application](https://github.com/sailfishos-chum/sailfishos-chum-gui)
 - with the usual command line tools for package management, `pkcon` or `zypper`
 
-### How to install the SailfishOS:Chum GUI-client app
+### How to install the SailfishOS:Chum GUI application
 
 The client app (GUI) for SailfishOS:Chum is available for easy installation at [chumrpm.netlify.app](https://chumrpm.netlify.app/) and its individual RPMs are also provided at [the SailfishOS:Chum repository](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum-gui).
 
