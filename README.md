@@ -102,7 +102,7 @@ Just be aware that for this to work out, you might need to provide some incentiv
 
 ### Submitting actively developed applications
 
-If an application is already compiled at the Sailfish&nbsp;OS OBS, simply use the "Submit package" action for the application and all its dependencies, which are not yet available as part of the SailfishOS:Chum respository or Jolla's repositories.
+If an application is already compiled at the Sailfish&nbsp;OS OBS, simply use the "Submit package" action for the application and all its dependencies, which are not yet available as part of the SailfishOS:Chum repository or Jolla's repositories.
 
 If you are not using the Sailfish&nbsp;OS OBS yet, you should obtain an account there by contacting the user `lbt` at the IRC channel #sailfishos and then configure your software package at the Sailfish&nbsp;OS OBS; alternatively you may ask the SailfishOS:Chum maintainers to add your software to the SailfishOS:Chum testing repository as a preliminary measure.
 
