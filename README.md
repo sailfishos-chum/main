@@ -85,11 +85,11 @@ The overall process is as follows.
 2. After a successful initial submission, you will be made maintainer of your software package in the `sailfishos:chum:testing` repository, which allows you to handle updates in a simplified manner:
    - For updating your package, prepare the source, then update the version information accordingly in the OBS service file `_service` at `sailfishos:chum:testing`: This will trigger a new build at OBS.
    - Check that your software package successfully builds at the SailfishOS:Chum testing repository. Note that this needs some patience and might require reloading the browser window or using `osc blt` at the command line to observe that OBS progresses.
-   - Ultimately use the "Submit package" action to trigger promoting your package from `sailfishos:chum:testing` to `sailfishos:chum`: Fill the form with `sailfishos:chum` as the target repository, your regular package name as target package and the description, which is only for this submit request, with for example, `<package name> <version number>`.
+   - Ultimately use the "Submit package" action to trigger promoting your package from `sailfishos:chum:testing` to `sailfishos:chum`: Fill the form with `sailfishos:chum` as the target repository, the target package field shall be left empty to reuse the extant name at `sailfishos:chum:testing` and the description can be left empty, as it is a free text field only for this submit request.
 
 As a reference, see the [maintainer's tasks](Maintainer.md) document for a list of checks and balances performed by the SailfishOS:Chum maintainers.
 
-Also note the documentation for the [additional metadata for SailfishOS:Chum](Metadata.md) in rpm spec files.
+Also note the documentation for the [additional metadata for SailfishOS:Chum](Metadata.md) in RPM spec files.
 
 ### Asking for help
 
