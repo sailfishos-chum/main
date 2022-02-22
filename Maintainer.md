@@ -28,7 +28,7 @@ After these checks have been successful, …
 - if building the package fails for some versions of SFOS, decide together with the submitter
   whether to disable those build targets or to adjust the package.
 
-- and all compilation issues are resolved, promote the package from `sailfishos:chum:testing`
+- while all compilation issues are resolved, promote the package from `sailfishos:chum:testing`
   to `sailfishos:chum`.
 
 - if some SFOS versions or architectures were disabled for a package in `sailfishos:chum:testing`,
