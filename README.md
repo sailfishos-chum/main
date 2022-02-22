@@ -74,7 +74,7 @@ There are no major restrictions imposed on software submitted to SailfishOS:Chum
 Although one limitation is that submitted software should not interfere with any software distributed by Jolla as a part of Sailfish&nbsp;OS, which also means that updating libraries distributed per Jolla's repositories must be avoided.
 Note that Jolla's repositories provide far more software packages than the ones installed by default.
 
-All kinds of software for Sailfish&nbsp;OS are welcome at SailfishOS:Chum, for example, actively maintained software for SFOS, abandoned software for SFOS, and extant tools and libraries which are missing on SFOS as distributed by Jolla.
+All kinds of software for Sailfish&nbsp;OS are welcome at SailfishOS:Chum, for example, actively maintained software for SFOS, abandoned software for SFOS, and tools and libraries which are missing on SFOS as distributed by Jolla.
 Depending on the type of software, the recommended way of submitting software to SailfisOS:Chum varies, as described in the sections below.
 
 The overall process is as follows. 
@@ -85,7 +85,7 @@ The overall process is as follows.
 2. After a successful initial submission, you will be made maintainer of your software package in the `sailfishos:chum:testing` repository, which allows you to handle updates in a simplified manner:
    - For updating your package, prepare the source, then update the version information accordingly in the OBS service file `_service` at `sailfishos:chum:testing`: This will trigger a new build at OBS.
    - Check that your software package successfully builds at the SailfishOS:Chum testing repository. Note that this needs some patience and might require reloading the browser window or using `osc blt` at the command line to observe that OBS progresses.
-   - Ultimately use the "Submit package" action to trigger promoting your package from `sailfishos:chum:testing` to `sailfishos:chum`: Fill the form with `sailfishos:chum` as the target repository, the target package field shall be left empty to reuse the extant name at `sailfishos:chum:testing` and the description can be left empty, as it is a free text field only for this submit request.
+   - Ultimately use the "Submit package" action to trigger promoting your package from `sailfishos:chum:testing` to `sailfishos:chum`: Fill the form with `sailfishos:chum` as the target repository, the target package field shall be left empty to reuse the existing name at `sailfishos:chum:testing` and the description can be left empty, as it is a free text field only for this submit request.
 
 As a reference, see the [maintainer's tasks](Maintainer.md) document for a list of checks and balances performed by the SailfishOS:Chum maintainers.
 
