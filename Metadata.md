@@ -1,6 +1,11 @@
 # Additional metadata for SailfishOS:Chum
 
-The basic specification for the additional metadata is that of AppStream.  While it is a goal to leverage AppStream metadata directly for SailfishOS:Chum packages and the SailfishOS:Chum GUI application, we are not at that stage yet, and are instead using a method of embedding metadata in the "Description" field of the rpm spec file.  An example of how this is done follows:
+The basic specification for the additional metadata is that of AppStream.
+While it is a goal to leverage AppStream metadata directly for SailfishOS:Chum packages and the SailfishOS:Chum GUI application, we are not at that stage yet, and are instead using a method of embedding metadata in the "Description" field of the rpm spec file.
+Note that it is important, that the part from the `%if "%{?vendor}" == "chum"` to the `%endif` is the last and a contiguous sub-section of the `%description` section, i.e., it must not contain empty or comment lines (or any other line, which is evaluated to an empty line).
+If you need comment lines for remarks with regard to the SailfishOS:Chum metadata, place them before the `%if`.
+
+An example of how this is done follows:
 ```
 %description
 Better camera application
