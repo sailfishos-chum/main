@@ -1,28 +1,29 @@
 ## Maintainer's tasks on package submission to SailfishOS:Chum
 
-On initial submission of a package, maintainers are expected to check that …
+On initial submission of a package by a package maintainer ("submitter" hereafter), a SailfishOS:Chum
+maintainer is tasked to check that …
 
-- `_service` file contains a specific git tag or commit ID (hash).
+- the `_service` file contains a specific git tag or commit ID (hash).
   Alternative is source submission via compressed archive.
 
-- `_service` file does not contain a webhook.
+- the `_service` file does not contain a webhook.
 
-- License in rpm spec file is [approved by OSI](https://opensource.org/licenses) and
+- the license in rpm spec file is [approved by OSI](https://opensource.org/licenses) and
   matches the software license in the source code repository or the submitted archive.
   
-- License tag in rpm spec file is one of
+- the license tag in rpm spec file is one of
   [github.com/sailfishos/rpmlint/blob/master/rpm/sailfish.toml#L150-L459](https://github.com/sailfishos/rpmlint/blob/master/rpm/sailfish.toml#L150-L459).
 
-- No binary blobs, such as precompiled libraries, applications or other executable files, are part of the package submission.
+- no binary blobs, such as precompiled libraries, applications or other executable files, are part of the package submission.
   Bundled databases or similar are allowed.
   
-- Package does not conflict with (e.g., replace) any package from Jolla's repositories for Sailfish&nbsp;OS.
+- the package does not conflict with (e.g., replace) any package from Jolla's repositories for Sailfish&nbsp;OS.
 
 After these checks have been successful, …
 
 - accept the submission of the package to `sailfishos:chum:testing`.
 
-- make the submitter a maintainer for the package in `sailfishos:chum:testing`.
+- employ the submitter as a maintainer for the package in `sailfishos:chum:testing`.
 
 - if building the package fails for some versions of SFOS, decide together with the submitter
   whether to disable those build targets or to adjust the package.
