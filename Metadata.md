@@ -10,6 +10,8 @@ An example of how this is done follows:
 %description
 Better camera application
 
+# This description section includes metadata for SailfishOS:Chum, see
+# https://github.com/sailfishos-chum/main/blob/main/Metadata.md
 %if "%{?vendor}" == "chum"
 PackageName: Advanced Camera
 Type: desktop-application
