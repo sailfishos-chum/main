@@ -8,6 +8,7 @@ Group:          System
 Source0:        %{name}-%{version}.tar.bz2
 Requires:       ssu
 Conflicts:      sailfishos-chum-testing
+Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
 
 %description
@@ -20,6 +21,7 @@ Provides:       sailfishos-chum-repository
 Group:          System
 Requires:       ssu
 Conflicts:      sailfishos-chum
+Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
 
 %description testing
