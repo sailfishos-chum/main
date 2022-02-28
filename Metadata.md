@@ -6,7 +6,7 @@ While it is a goal to leverage AppStream metadata directly for SailfishOS:Chum p
 Note that it is important, that the part from the `%if "%{?vendor}" == "chum"` to the `%endif` is the last and a contiguous paragraph of the `%description` section, i.e., it must not contain empty or comment lines (or any other line, which is evaluated to an empty line).
 If you need comment lines for remarks with regard to the SailfishOS:Chum metadata, place them outside of the whole metadata paragraph, as shown in the example.
 
-Also note that embracing the metadata for SailfishOS:Chum by `%if "%{?vendor}" == "chum"` / `%endif` is not strictly necessary: If the `%if…`- and `%endif-line are both omitted, the metadata for SailfishOS:Chum is displayed as part of the package description by common tools as `pkcon`, `zypper`, `rpm` etc.
+Also note that embracing the metadata for SailfishOS:Chum by `%if "%{?vendor}" == "chum"` / `%endif` is not strictly necessary: If the `%if…` and `%endif` lines are both omitted, the metadata for SailfishOS:Chum is displayed as part of the package description by common tools as `pkcon`, `zypper`, `rpm` etc.
 Nevertheless, metadata for SailfishOS:Chum always must be contiguous (i.e., without lines which are empty or may be evaluated to become empty) and the last paragraph of the `%description` section.
 
 An example of how this is done follows:
