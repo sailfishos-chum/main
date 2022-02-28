@@ -1,4 +1,4 @@
-Summary:        SailfishOS:Chum community repository
+Summary:        Proper SSU configuration for the SailfishOS:Chum community repository
 License:        MIT
 Name:           sailfishos-chum
 Version:        0.3.0
@@ -12,10 +12,19 @@ Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
 
 %description
-%{summary}.
+The package sailfishos-chum is a helper RPM, which solely provides an
+appropriate local repository configuration for utilising the SailfishOS:Chum
+community repository with command line tools as pkcon or zypper.
+
+Note that the SailfishOS:Chum GUI application provides the same local
+repository configuration, while also providing a GUI app, which can be used in
+addition to pkcon or zypper. Furthermore it offers easy switching between the
+regular SailfishOS:Chum repository and the SailfishOS:Chum testing repository.
+Hence you might rather install the sailfishos-chum-gui RPM instead of the
+sailfishos-chum RPM.
 
 %package testing
-Summary:        SailfishOS:Chum community repository: Testing repository
+Summary:        Proper SSU configuration for the SailfishOS:Chum TESTING repository
 License:        MIT
 Provides:       sailfishos-chum-repository
 Group:          System
@@ -25,7 +34,18 @@ Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
 
 %description testing
-%{summary}.
+The package sailfishos-chum-testing is a helper RPM, which solely provides an
+appropriate local repository configuration for utilising the SailfishOS:Chum
+TESTING repository with command line tools as pkcon or zypper.
+Note that the SailfishOS:Chum testing repository is primarily aimed at
+software developers.
+
+Also note that the SailfishOS:Chum GUI application provides the same local
+repository configuration, while also providing a GUI app, which can be used in
+addition to pkcon or zypper. Furthermore it offers easy switching between the
+regular SailfishOS:Chum repository and the SailfishOS:Chum testing repository.
+Hence you might rather install the sailfishos-chum-gui RPM instead of the
+sailfishos-chum-testing RPM.
 
 %prep
 %setup -q -n %{name}-%{version}
