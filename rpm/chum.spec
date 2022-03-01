@@ -1,4 +1,4 @@
-Summary:        Proper SSU configuration for the SailfishOS:Chum community repository
+Summary:        SSU configuration for the SailfishOS:Chum community repository
 License:        MIT
 Name:           sailfishos-chum
 Version:        0.3.0
@@ -24,7 +24,7 @@ Hence you might rather install the sailfishos-chum-gui RPM instead of the
 sailfishos-chum RPM.
 
 %package testing
-Summary:        Proper SSU configuration for the SailfishOS:Chum TESTING repository
+Summary:        SSU configuration for the SailfishOS:Chum TESTING repository
 License:        MIT
 Provides:       sailfishos-chum-repository
 Group:          System
