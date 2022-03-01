@@ -1,4 +1,4 @@
-# SailfishOS:Chum community repository: Documentation and issue tracker
+# SailfishOS:Chum community repository
 
 The SailfishOS:Chum community repository provides a collection of
 applications, tools and libraries compiled for various hardware
@@ -42,7 +42,7 @@ For the etymological origin and meanings of the word "chum", see
 and [en.wiktionary.org:chum](https://en.wiktionary.org/wiki/chum).
 
 
-## How to use the SailfishOS:Chum repository: User's guide
+## User's guide
 
 There are two different ways of using the SailfishOS:Chum repository:
 - with the [SailfishOS:Chum GUI application](https://github.com/sailfishos-chum/sailfishos-chum-gui)
@@ -68,7 +68,7 @@ As all software packages at SailfishOS:Chum have their vendor set to `chum`, it 
 `rpm -qa --queryformat '%{vendor}:%{name}\n' | fgrep chum`
 
 
-## How to use the SailfishOS:Chum repository: Developer's guide
+## Developer's guide
 
 There are no major restrictions imposed on software submitted to SailfishOS:Chum.
 Although one limitation is that submitted software should not interfere with any software distributed by Jolla as a part of Sailfish&nbsp;OS, which also means that updating libraries distributed per Jolla's repositories must be avoided.
