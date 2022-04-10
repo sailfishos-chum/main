@@ -25,11 +25,11 @@ Categories:
  - Video
 Custom:
   Repo: https://github.com/piggz/harbour-advanced-camera
-Icon: https://raw.githubusercontent.com/piggz/harbour-advanced-camera/master/harbour-advanced-camera.svg
+Icon: https://github.com/piggz/harbour-advanced-camera/raw/master/harbour-advanced-camera.svg
 Screenshots:
- - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot1.png
- - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot2.png
- - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot3.png
+ - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot1.png
+ - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot2.png
+ - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot3.png
 Url:
   Homepage: https://github.com/piggz/harbour-advanced-camera
   Help: https://github.com/piggz/harbour-advanced-camera/discussions
