@@ -25,11 +25,11 @@ Categories:
  - Video
 Custom:
   Repo: https://github.com/piggz/harbour-advanced-camera
-Icon: https://raw.githubusercontent.com/piggz/harbour-advanced-camera/master/harbour-advanced-camera.svg
+Icon: https://github.com/piggz/harbour-advanced-camera/raw/master/harbour-advanced-camera.svg
 Screenshots:
- - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot1.png
- - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot2.png
- - https://github.com/piggz/harbour-advanced-camera/raw/metadata/screenshots/screenshot3.png
+ - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot1.png
+ - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot2.png
+ - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot3.png
 Url:
   Homepage: https://github.com/piggz/harbour-advanced-camera
   Help: https://github.com/piggz/harbour-advanced-camera/discussions
@@ -45,11 +45,11 @@ Note: All fields are optional, and the example above does not use all possible f
 | -------------------------- | ---------------------------------------------------------- | ----- |
 | PackageName:               | Human readable application name                            | If not set, it is calculated from the package ID.  Does not follow AppStream specification due to clash with OBS tar\_git service. |
 | Type:                      | Basic application type                                     | Defaults to `generic`, unless the package name starts with `harbour-`, then it defaults to `desktop-application`.  See [freedesktop.org:AppStream-docs:YAML-field-dep11](https://www.freedesktop.org/software/appstream/docs/sect-AppStream-YAML.html#field-dep11-type) for valid entries. |
-| DeveloperName:             | Developer's preferred name                                 | If not set, and a GitHub repository is set, then name will be automatically retrieved.  Note that such automatic retrieval is not supported for GitLab repositories. |
+| DeveloperName:             | Developer's preferred name                                 | If not set, and a GitHub repository is set, then the name will be automatically retrieved.  Note that such automatic retrieval is not supported for GitLab repositories. |
 | PackagerName:              | Name of the packager                                       | Use if different from the developer and is expected to be contacted for packaging issues. | 
 | Categories:                | List of categories in which the package will be displayed  | Defaults to `- Other`; see [freedesktop.org:AppStream-docs:ct-categories](https://www.freedesktop.org/software/appstream/docs/chap-CollectionData.html#tag-ct-categories) for the general specification and [specifications.freedesktop.org:menu-spec:apa](https://specifications.freedesktop.org/menu-spec/latest/apa.html) for valid categories. |
 | Custom:                    | Root entry for custom repository fields                    |       |
-| &nbsp;&nbsp;Repo:          | URL of the source code repository                          | If `Repo:` is set, other URLs for SailfishOS:Chum GUI application will be automatically determined when possible (see `Url:` sub-fields).  Currently supported are GitHub and GitLab.com URLs in the form `https://github.com/<username>/<reponame>` and `https://gitlab.com/<username>/<reponame>`. |
+| &nbsp;&nbsp;Repo:          | URL of the source code repository                          | If `Repo:` is set, other URLs for SailfishOS:Chum GUI application will be automatically determined when possible (see `Url:` sub-fields).  Currently supported are GitHub and GitLab.com URLs in the form `https://github.com/<username>/<reponame>` and `https://gitlab.com/<username>/<reponame>`.<br />If `Repo:` is not set or the metadata for SailfishOS:Chum is completely missing, the URL provided by the `URL:` field in the spec file preamble is used instead. |
 | &nbsp;&nbsp;PackagingRepo: | URL of the repository specifically used for packaging      | Is shown in the SailfishOS:Chum GUI application as a web-link.  If `Repo:` is not set, it is used as a fallback for the GitHub and GitLab integration. |
 | &nbsp;&nbsp;DescriptionMD: | URL for a package description in MarkDown syntax           | If provided, a description is downloaded from the specified URL and rendered as MarkDown (see [Showdown's-Markdown-syntax](https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax)). |
 | Icon:                      | URL to an image used for the application icon              | If not set, no icon will be displayed in the SailfishOS:Chum GUI application for the package.  Supported file formats are SVG and PNG. |
