@@ -1,7 +1,7 @@
 Summary:        SSU configuration for the SailfishOS:Chum community repository
 License:        MIT
 Name:           sailfishos-chum
-Version:        0.4.2
+Version:        0.5.0
 Release:        1
 Provides:       sailfishos-chum-repository
 Group:          System
@@ -58,22 +58,36 @@ sailfishos-chum-testing RPM.
 
 %files testing
 
-%posttrans
-rm -f /var/cache/ssu/features.ini || true
-ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
-ssu ur || true
+%post
+if printf %s "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum
+then
+  ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
+  ssu ur
+fi
 
-%posttrans testing
-rm -f /var/cache/ssu/features.ini || true
-ssu ar sailfishos-chum-testing 'https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%%(release)_%%(arch)/'
-ssu ur || true
+%post testing
+if printf %s "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum-testing
+then
+  ssu ar sailfishos-chum-testing 'https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%%(release)_%%(arch)/'
+  ssu ur
+fi
 
 %postun
-ssu rr sailfishos-chum || true
-rm -f /var/cache/ssu/features.ini || true
-ssu ur || true
+if [ $1 = 0 ]  # Removal
+  ssu rr sailfishos-chum
+  rm -f /var/cache/ssu/features.ini
+  ssu ur
+fi
 
 %postun testing
-ssu rr sailfishos-chum-testing || true
-rm -f /var/cache/ssu/features.ini || true
-ssu ur || true
+if [ $1 = 0 ]  # Removal
+  ssu rr sailfishos-chum-testing
+  rm -f /var/cache/ssu/features.ini
+  ssu ur
+fi
+
+# BTW, `ssu`, `rm -f`, `mkdir -p` etc. *always* return with "0" ("success"), hence
+# no appended `|| true` needed to satisfy `set -e` for failing commands outside of
+# flow control directives (if, while, until etc.).  Furthermore on Fedora Docs it
+# is indicated that solely the final exit status of a whole scriptlet is crucial: 
+# https://docs.fedoraproject.org/en-US/packaging-guidelines/Scriptlets/#_syntax
