@@ -6,7 +6,7 @@ Release:        1
 Provides:       sailfishos-chum-repository
 Group:          System
 Source0:        %{name}-%{version}.tar.bz2
-Requires(post): ssu
+Requires(post,postun): ssu
 Requires:       ssu
 Conflicts:      sailfishos-chum-testing
 Conflicts:      sailfishos-chum-gui
@@ -61,7 +61,7 @@ sailfishos-chum-testing RPM.
 %files testing
 
 %post
-if echo "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum
+if ! echo "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum
 then
   ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
   ssu ur
@@ -69,7 +69,7 @@ fi
 exit 0
 
 %post testing
-if echo "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum-testing
+if ! echo "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum-testing
 then
   ssu ar sailfishos-chum-testing 'https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%%(release)_%%(arch)/'
   ssu ur
