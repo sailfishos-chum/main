@@ -48,7 +48,7 @@ Hence you might rather install the sailfishos-chum-gui RPM instead of the
 sailfishos-chum-testing RPM.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 
@@ -59,35 +59,43 @@ sailfishos-chum-testing RPM.
 %files testing
 
 %post
-if printf %s "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum
+if echo "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum
 then
   ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
   ssu ur
 fi
+exit 0
 
 %post testing
-if printf %s "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum-testing
+if echo "$(ssu lr | grep '^ - ' | cut -f 3 -d ' ')" | grep -Fq sailfishos-chum-testing
 then
   ssu ar sailfishos-chum-testing 'https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%%(release)_%%(arch)/'
   ssu ur
 fi
+exit 0
 
 %postun
-if [ $1 = 0 ]  # Removal
+if [ "$1" = 0 ]  # Removal
   ssu rr sailfishos-chum
   rm -f /var/cache/ssu/features.ini
   ssu ur
 fi
+exit 0
 
 %postun testing
-if [ $1 = 0 ]  # Removal
+if [ "$1" = 0 ]  # Removal
   ssu rr sailfishos-chum-testing
   rm -f /var/cache/ssu/features.ini
   ssu ur
 fi
+exit 0
 
 # BTW, `ssu`, `rm -f`, `mkdir -p` etc. *always* return with "0" ("success"), hence
 # no appended `|| true` needed to satisfy `set -e` for failing commands outside of
 # flow control directives (if, while, until etc.).  Furthermore on Fedora Docs it
 # is indicated that solely the final exit status of a whole scriptlet is crucial: 
-# https://docs.fedoraproject.org/en-US/packaging-guidelines/Scriptlets/#_syntax
+# See https://docs.pagure.org/packaging-guidelines/Packaging%3AScriptlets.html
+# or https://docs.fedoraproject.org/en-US/packaging-guidelines/Scriptlets/#_syntax
+# committed on 18 February 2019 by tibbs ( https://pagure.io/user/tibbs ) as
+# "8d0cec9 Partially convert to semantic line breaks." in
+# https://pagure.io/packaging-committee/c/8d0cec97aedc9b34658d004e3a28123f36404324
