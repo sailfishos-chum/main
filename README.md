@@ -95,7 +95,7 @@ Also note the documentation for the [additional metadata for SailfishOS:Chum](Me
 
 If something is not clear or you become stuck in the process, feel free to ask for help via the IRC channel `#sailfishos` (you may contact `piggz` or `rinigus` there), the [Sailfish&nbsp;OS forum](https://forum.sailfishos.org/search?q=chum), or filing an [issue here at GitHub](https://github.com/sailfishos-chum/main/issues).
 
-For an OBS primer, see the [Getting Started with OBS](GettingStarted.md) document.
+For an OBS primer, see our [Getting Started with OBS](GettingStarted.md) document.
 
 You may also ask someone else to package some software for you.
 Just be aware that for this to work out, you might need to provide some incentive.
