@@ -4,7 +4,7 @@ This document summarises the process of building your first package on the Sailf
 It only skims the surface of OBS and is not a manual.
 
 To start building your packages on OBS you will require an account.
-If you are not using the Sailfish&nbsp;OS OBS yet, you shall obtain an account there by contacting the user `lbt` t the IRC channel `#sailfishos`.
+If you are not using the Sailfish&nbsp;OS OBS yet, you shall obtain an account there by contacting the user `lbt` on the IRC channel `#sailfishos`.
 
 When your account is set up, you will have a "Home Project".
 This is where you can start creating packages.
