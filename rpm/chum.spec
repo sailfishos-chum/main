@@ -6,8 +6,8 @@ Release:        1
 Provides:       sailfishos-chum-repository
 Group:          System
 Source0:        %{name}-%{version}.tar.bz2
-Requires(post,postun): ssu
 Requires:       ssu
+Requires(post,postun): ssu
 Conflicts:      sailfishos-chum-testing
 Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
@@ -29,8 +29,8 @@ Summary:        SSU configuration for the SailfishOS:Chum TESTING repository
 License:        MIT
 Provides:       sailfishos-chum-repository
 Group:          System
-Requires(post): ssu
 Requires:       ssu
+Requires(post,postun): ssu
 Conflicts:      sailfishos-chum
 Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
