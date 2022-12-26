@@ -1,4 +1,4 @@
-name: CI build on SFOS 3.0.1.11 (armv7hl)
+name: CI on SFOS 3.0.1.11
 
 on:
   push:
