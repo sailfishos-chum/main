@@ -7,7 +7,8 @@ Provides:       sailfishos-chum-repository
 Group:          System
 Source0:        %{name}-%{version}.tar.bz2
 Requires:       ssu
-Requires(post,postun): ssu
+Requires(post): ssu
+Requires(postun): ssu
 Conflicts:      sailfishos-chum-testing
 Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
@@ -30,7 +31,8 @@ License:        MIT
 Provides:       sailfishos-chum-repository
 Group:          System
 Requires:       ssu
-Requires(post,postun): ssu
+Requires(post): ssu
+Requires(postun): ssu
 Conflicts:      sailfishos-chum
 Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
