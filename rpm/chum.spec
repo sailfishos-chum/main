@@ -1,12 +1,14 @@
 Summary:        SSU configuration for the SailfishOS:Chum community repository
 License:        MIT
 Name:           sailfishos-chum
-Version:        0.4.2
+Version:        0.5.0
 Release:        1
 Provides:       sailfishos-chum-repository
 Group:          System
 Source0:        %{name}-%{version}.tar.bz2
 Requires:       ssu
+Requires(post): ssu
+Requires(postun): ssu
 Conflicts:      sailfishos-chum-testing
 Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
@@ -29,6 +31,8 @@ License:        MIT
 Provides:       sailfishos-chum-repository
 Group:          System
 Requires:       ssu
+Requires(post): ssu
+Requires(postun): ssu
 Conflicts:      sailfishos-chum
 Conflicts:      sailfishos-chum-gui
 BuildArch:      noarch
@@ -48,7 +52,7 @@ Hence you might rather install the sailfishos-chum-gui RPM instead of the
 sailfishos-chum-testing RPM.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 
@@ -58,22 +62,44 @@ sailfishos-chum-testing RPM.
 
 %files testing
 
-%posttrans
-rm -f /var/cache/ssu/features.ini || true
-ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
-ssu ur || true
+%post
+if ! ssu lr | grep '^ - ' | cut -f 3 -d ' ' | grep -Fq sailfishos-chum
+then
+  ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
+  ssu ur
+fi
+exit 0
 
-%posttrans testing
-rm -f /var/cache/ssu/features.ini || true
-ssu ar sailfishos-chum-testing 'https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%%(release)_%%(arch)/'
-ssu ur || true
+%post testing
+if ! ssu lr | grep '^ - ' | cut -f 3 -d ' ' | grep -Fq sailfishos-chum-testing
+then
+  ssu ar sailfishos-chum-testing 'https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%%(release)_%%(arch)/'
+  ssu ur
+fi
+exit 0
 
 %postun
-ssu rr sailfishos-chum || true
-rm -f /var/cache/ssu/features.ini || true
-ssu ur || true
+if [ "$1" = 0 ]  # Removal
+  ssu rr sailfishos-chum
+  rm -f /var/cache/ssu/features.ini
+  ssu ur
+fi
+exit 0
 
 %postun testing
-ssu rr sailfishos-chum-testing || true
-rm -f /var/cache/ssu/features.ini || true
-ssu ur || true
+if [ "$1" = 0 ]  # Removal
+  ssu rr sailfishos-chum-testing
+  rm -f /var/cache/ssu/features.ini
+  ssu ur
+fi
+exit 0
+
+# BTW, `ssu`, `rm -f`, `mkdir -p` etc. *always* return with "0" ("success"), hence
+# no appended `|| true` needed to satisfy `set -e` for failing commands outside of
+# flow control directives (if, while, until etc.).  Furthermore on Fedora Docs it
+# is indicated that solely the final exit status of a whole scriptlet is crucial: 
+# See https://docs.pagure.org/packaging-guidelines/Packaging%3AScriptlets.html
+# or https://docs.fedoraproject.org/en-US/packaging-guidelines/Scriptlets/#_syntax
+# committed on 18 February 2019 by tibbs ( https://pagure.io/user/tibbs ) as
+# "8d0cec9 Partially convert to semantic line breaks." in
+# https://pagure.io/packaging-committee/c/8d0cec97aedc9b34658d004e3a28123f36404324
