@@ -9,7 +9,7 @@ assignees: ''
 
 **SailfishOS VERSION** (Settings → About product → Build): 
 <br />**HARDWARE** (Settings → About product → Manufacturer & Product name): 
-<br />**SailfishOS:Chum GUI application VERSION**: 
+<br />**SailfishOS:Chum repo config RPM VERSION**: 
 <br />
 
 #### BUG DESCRIPTION
