@@ -142,3 +142,9 @@ exit 0
 # committed on 18 February 2019 by tibbs ( https://pagure.io/user/tibbs ) as
 # "8d0cec9 Partially convert to semantic line breaks." in
 # https://pagure.io/packaging-committee/c/8d0cec97aedc9b34658d004e3a28123f36404324
+
+%changelog
+* Tue Jan 03 2023 olf <Olf0@users.noreply.github.com> - 0.5.1-1
+- Add `URL:` in spec file
+- `Conflict: -installer` in spec file
+- Add SailfishOS:Chum metadata to spec file
