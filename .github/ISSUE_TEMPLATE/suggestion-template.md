@@ -12,4 +12,4 @@ assignees: ''
 
 #### ADDITIONAL INFORMATION
 
-<SailfishOS:Chumsub>\[Please consider which other pieces of information may be relevant: Attach relevant data, provide screenshots etc.\]</sub>
+<sub>\[Please consider which other pieces of information may be relevant: Attach relevant data, provide screenshots etc.\]</sub>
