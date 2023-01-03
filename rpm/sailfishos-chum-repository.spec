@@ -139,9 +139,12 @@ exit 0
 # is indicated that solely the final exit status of a whole scriptlet is crucial: 
 # See https://docs.pagure.org/packaging-guidelines/Packaging%3AScriptlets.html
 # or https://docs.fedoraproject.org/en-US/packaging-guidelines/Scriptlets/#_syntax
-# committed on 18 February 2019 by tibbs ( https://pagure.io/user/tibbs ) as
-# "8d0cec9 Partially convert to semantic line breaks." in
+# committed on 18 February 2019 by tibbs ( https://pagure.io/user/tibbs ) in
 # https://pagure.io/packaging-committee/c/8d0cec97aedc9b34658d004e3a28123f36404324
+# Hence I have the impression, that only the main section of a spec file is
+# interpreted in a shell called with the option `-e', but not the scriptlets
+# (`%%pre`, `%%post`, `%%preun`, `%%postun`, `%%pretrans`, `%%posttrans`,
+# `%%trigger*` and `%%file*`).
 
 %changelog
 * Tue Jan 03 2023 olf <Olf0@users.noreply.github.com> - 0.5.1-1
