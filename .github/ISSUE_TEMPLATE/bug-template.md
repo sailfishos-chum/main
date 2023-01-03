@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a bug for this project
+about: Report a bug for SailfishOS:Chum
 title: "[Bug] "
 labels: 'bug'
 assignees: ''
