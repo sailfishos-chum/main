@@ -6,7 +6,7 @@ Release:        1
 Provides:       sailfishos-chum-repository
 Group:          System
 URL:            https://github.com/sailfishos-chum/main
-Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/%{version}/main-%{version}.tar.gz
 Requires:       ssu
 Requires(post): ssu
 Requires(postun): ssu
@@ -26,6 +26,24 @@ addition to pkcon or zypper.  Furthermore it offers easy switching between the
 regular SailfishOS:Chum repository and the SailfishOS:Chum testing repository.
 Hence you might rather install the sailfishos-chum-gui RPM (e.g., via the
 sailfishos-chum-gui-installer RPM), instead of the sailfishos-chum RPM.
+
+%if "%{?vendor}" == "chum"
+PackageName: SailfishOS:Chum repository configuration RPM
+Type: generic
+Categories:
+ - Utilities
+ - System
+ - PackageManager
+DeveloperName: olf (Olf0)
+Custom:
+  Repo: %{url}
+Icon: %{url}/raw/main/icons/%{name}.svg
+Url:
+  Homepage: %{url}
+  Help: %{url}/issues
+  Bugtracker: %{url}/issues
+%endif
+
 
 %package testing
 Summary:        SSU configuration for the SailfishOS:Chum TESTING repository
@@ -53,6 +71,24 @@ addition to pkcon or zypper.  Furthermore it offers easy switching between the
 regular SailfishOS:Chum repository and the SailfishOS:Chum testing repository.
 Hence you might rather install the sailfishos-chum-gui RPM (e.g., via the
 sailfishos-chum-gui-installer RPM), instead of the sailfishos-chum-testing RPM.
+
+%if "%{?vendor}" == "chum"
+PackageName: SailfishOS:Chum TESTING repository configuration RPM
+Type: generic
+Categories:
+ - Utilities
+ - System
+ - PackageManager
+DeveloperName: olf (Olf0)
+Custom:
+  Repo: %{url}
+Icon: %{url}/raw/main/icons/%{name}.svg
+Url:
+  Homepage: %{url}
+  Help: %{url}/issues
+  Bugtracker: %{url}/issues
+%endif
+
 
 %prep
 %setup -q
