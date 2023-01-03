@@ -1,16 +1,18 @@
 Summary:        SSU configuration for the SailfishOS:Chum community repository
 License:        MIT
 Name:           sailfishos-chum
-Version:        0.5.0
+Version:        0.5.1
 Release:        1
 Provides:       sailfishos-chum-repository
 Group:          System
-Source0:        %{name}-%{version}.tar.bz2
+URL:            https://github.com/sailfishos-chum/main
+Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 Requires:       ssu
 Requires(post): ssu
 Requires(postun): ssu
 Conflicts:      sailfishos-chum-testing
 Conflicts:      sailfishos-chum-gui
+Conflicts:      sailfishos-chum-gui-installer
 BuildArch:      noarch
 
 %description
@@ -20,10 +22,10 @@ community repository with command line tools as pkcon or zypper.
 
 Note that the SailfishOS:Chum GUI application provides the same local
 repository configuration, while also providing a GUI app, which can be used in
-addition to pkcon or zypper. Furthermore it offers easy switching between the
+addition to pkcon or zypper.  Furthermore it offers easy switching between the
 regular SailfishOS:Chum repository and the SailfishOS:Chum testing repository.
-Hence you might rather install the sailfishos-chum-gui RPM instead of the
-sailfishos-chum RPM.
+Hence you might rather install the sailfishos-chum-gui RPM (e.g., via the
+sailfishos-chum-gui-installer RPM), instead of the sailfishos-chum RPM.
 
 %package testing
 Summary:        SSU configuration for the SailfishOS:Chum TESTING repository
@@ -35,6 +37,7 @@ Requires(post): ssu
 Requires(postun): ssu
 Conflicts:      sailfishos-chum
 Conflicts:      sailfishos-chum-gui
+Conflicts:      sailfishos-chum-gui-installer
 BuildArch:      noarch
 
 %description testing
@@ -46,10 +49,10 @@ software developers.
 
 Also note that the SailfishOS:Chum GUI application provides the same local
 repository configuration, while also providing a GUI app, which can be used in
-addition to pkcon or zypper. Furthermore it offers easy switching between the
+addition to pkcon or zypper.  Furthermore it offers easy switching between the
 regular SailfishOS:Chum repository and the SailfishOS:Chum testing repository.
-Hence you might rather install the sailfishos-chum-gui RPM instead of the
-sailfishos-chum-testing RPM.
+Hence you might rather install the sailfishos-chum-gui RPM (e.g., via the
+sailfishos-chum-gui-installer RPM), instead of the sailfishos-chum-testing RPM.
 
 %prep
 %setup -q
