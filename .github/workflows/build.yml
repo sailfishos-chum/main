@@ -11,9 +11,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-
+    env:
+      SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Cache SDK image
+      id: cache-sdk
+      uses: actions/cache@v3
+      with:
+        path: coderus/github-sfos-build@old-stable
+        key: cache
 
     - name: Prepare
       run: mkdir RPMS
