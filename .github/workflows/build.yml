@@ -21,7 +21,7 @@ jobs:
       id: cache-sdk
       uses: actions/cache@v3
       with:
-        path: coderus/github-sfos-build@old-stable
+        path: coderus/github-sfos-build@*
         key: cache
 
     - name: Prepare
