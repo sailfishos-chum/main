@@ -1,4 +1,4 @@
-name: CI on SFOS 3.1.0.11
+name: CI on SFOS 3.1.0.12
 
 on:
   push:
@@ -10,10 +10,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Prepare
       run: mkdir RPMS
@@ -21,11 +21,11 @@ jobs:
     - name: Build armv7hl
       uses: coderus/github-sfos-build@old-stable
       with:
-        release: 3.1.0.11
+        release: 3.1.0.12
         arch: armv7hl
 
     - name: Upload build result
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: rpm-build-result
-        path: RPMS
+        path: RPMS/
