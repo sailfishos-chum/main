@@ -39,7 +39,7 @@ Custom:
   Repo: %{url}
 Icon: %{url}/raw/main/icons/%{name}.svg
 Url:
-  Homepage: %{url}
+  Homepage: https://openrepos.net/content/olf/sailfishoschum-repo-config-rpm
   Help: %{url}/issues
   Bugtracker: %{url}/issues
 %endif
@@ -84,7 +84,7 @@ Custom:
   Repo: %{url}
 Icon: %{url}/raw/main/icons/%{name}.svg
 Url:
-  Homepage: %{url}
+  Homepage: https://openrepos.net/content/olf/sailfishoschum-repo-config-rpm
   Help: %{url}/issues
   Bugtracker: %{url}/issues
 %endif
@@ -147,7 +147,6 @@ exit 0
 # `%%trigger*` and `%%file*`).
 
 %changelog
-* Tue Jan 03 2023 olf <Olf0@users.noreply.github.com> - 0.5.1-1
-- Add `URL:` in spec file
-- `Conflict: -installer` in spec file
-- Add SailfishOS:Chum metadata to spec file
+* Thu Sep  9 1999 olf <Olf0@users.noreply.github.com> - 9.9.9
+- %{url}/releases
+
