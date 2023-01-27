@@ -35,7 +35,7 @@ Categories:
  - System
  - PackageManager
  - ConsoleOnly
-DeveloperName: olf (Olf0)
+DeveloperName: SailfishOS:Chum community
 Custom:
   Repo: %{url}
 Icon: %{url}/raw/main/.icons/%{name}.svg
@@ -81,7 +81,7 @@ Categories:
  - System
  - PackageManager
  - ConsoleOnly
-DeveloperName: olf (Olf0)
+DeveloperName: SailfishOS:Chum community
 Custom:
   Repo: %{url}
 Icon: %{url}/raw/main/.icons/%{name}.svg
