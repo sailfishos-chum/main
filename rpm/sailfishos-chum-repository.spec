@@ -34,10 +34,11 @@ Categories:
  - Utilities
  - System
  - PackageManager
+ - ConsoleOnly
 DeveloperName: olf (Olf0)
 Custom:
   Repo: %{url}
-Icon: %{url}/raw/main/icons/%{name}.svg
+Icon: %{url}/raw/main/.icons/%{name}.svg
 Url:
   Homepage: https://openrepos.net/content/olf/sailfishoschum-repo-config-rpm
   Help: %{url}/issues
@@ -79,10 +80,11 @@ Categories:
  - Utilities
  - System
  - PackageManager
+ - ConsoleOnly
 DeveloperName: olf (Olf0)
 Custom:
   Repo: %{url}
-Icon: %{url}/raw/main/icons/%{name}.svg
+Icon: %{url}/raw/main/.icons/%{name}.svg
 Url:
   Homepage: https://openrepos.net/content/olf/sailfishoschumtesting-repo-config-rpm
   Help: %{url}/issues
