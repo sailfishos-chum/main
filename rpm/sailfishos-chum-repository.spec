@@ -60,20 +60,20 @@ BuildArch:      noarch
 
 %description testing
 The package sailfishos-chum-testing is a helper RPM, which solely provides an
-appropriate local repository configuration for utilising the SailfishOS:Chum
-TESTING repository with command line tools as pkcon or zypper.
+appropriate local repository configuration for utilising the 
+SailfishOS:Chum:Testing repository with command line tools as pkcon or zypper.
 Note that the SailfishOS:Chum testing repository is primarily aimed at
 software developers.
 
 Also note that the SailfishOS:Chum GUI application provides the same local
 repository configuration, while also providing a GUI app, which can be used in
 addition to pkcon or zypper.  Furthermore it offers easy switching between the
-regular SailfishOS:Chum repository and the SailfishOS:Chum testing repository.
+regular SailfishOS:Chum repository and the SailfishOS:Chum:Testing repository.
 Hence you might rather install the sailfishos-chum-gui RPM (e.g., via the
 sailfishos-chum-gui-installer RPM), instead of the sailfishos-chum-testing RPM.
 
 %if "%{?vendor}" == "chum"
-PackageName: SailfishOS:Chum TESTING repository configuration RPM
+PackageName: SailfishOS:Chum:Testing repository configuration RPM
 Type: generic
 Categories:
  - Utilities
@@ -84,7 +84,7 @@ Custom:
   Repo: %{url}
 Icon: %{url}/raw/main/icons/%{name}.svg
 Url:
-  Homepage: https://openrepos.net/content/olf/sailfishoschum-repo-config-rpm
+  Homepage: https://openrepos.net/content/olf/sailfishoschumtesting-repo-config-rpm
   Help: %{url}/issues
   Bugtracker: %{url}/issues
 %endif
