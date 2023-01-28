@@ -1,12 +1,12 @@
 Summary:        SSU configuration for the SailfishOS:Chum community repository
 License:        MIT
 Name:           sailfishos-chum
-Version:        0.5.1
+Version:        0.5.2
 Release:        1
 Group:          System
 BuildArch:      noarch
 URL:            https://github.com/sailfishos-chum/main
-Source0:        %{url}/archive/%{version}/main-%{version}.tar.gz
+Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 Requires:       ssu
 Requires(post): ssu
 Requires(postun): ssu
