@@ -6,7 +6,13 @@ Release:        1
 Group:          System
 BuildArch:      noarch
 URL:            https://github.com/sailfishos-chum/main
+# The "Source0:" line below requires that the value of %%{name} is also the
+# project name at GitHub and the value of %%{version} is also the name of a
+# correspondingly set git-tag.
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+# Note that the rpmlintrc file shall be named so according to
+# https://en.opensuse.org/openSUSE:Packaging_checks#Building_Packages_in_spite_of_errors
+Source99:       %{name}.rpmlintrc
 Requires:       ssu
 Requires(post): ssu
 Requires(postun): ssu
