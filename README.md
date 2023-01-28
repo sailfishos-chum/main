@@ -80,11 +80,11 @@ Depending on the type of software, the recommended way of submitting software to
 The overall process is as follows. 
 1. For the initial submission of a software package:
    - Make your software package successfully compile at the Sailfish&nbsp;OS OBS.
-   - Submit your package to the SailfishOS:Chum testing repository `sailfishos:chum:testing` by using the "Submit package" action of OBS. A version has to be specified when submitting.
-   - The `sailfishos:chum:testing` maintainers will accept or reject your request and check if your software package successfully builds at the SailfishOS:Chum testing repository. If all is fine, the package will be promoted to the main `sailfishos:chum` repository by the SailfishOS:Chum maintainers. If something went wrong, you will be notified to resolve the issue.
+   - Submit your package to the SailfishOS:Chum:Testing repository `sailfishos:chum:testing` by using the "Submit package" action of OBS. A version has to be specified when submitting.
+   - The `sailfishos:chum:testing` maintainers will accept or reject your request and check if your software package successfully builds at the SailfishOS:Chum:Testing repository. If all is fine, the package will be promoted to the main `sailfishos:chum` repository by the SailfishOS:Chum maintainers. If something went wrong, you will be notified to resolve the issue.
 2. After a successful initial submission, you will be made maintainer of your software package in the `sailfishos:chum:testing` repository, which allows you to handle updates in a simplified manner:
    - For updating your package, prepare the source, then update the version information accordingly in the OBS service file `_service` at `sailfishos:chum:testing`: This will trigger a new build at OBS.
-   - Check that your software package successfully builds at the SailfishOS:Chum testing repository. Note that this needs some patience and might require reloading the browser window or using `osc blt` at the command line to observe that OBS progresses.
+   - Check that your software package successfully builds at the SailfishOS:Chum:Testing repository. Note that this needs some patience and might require reloading the browser window or using `osc blt` at the command line to observe that OBS progresses.
    - Ultimately use the "Submit package" action to trigger promoting your package from `sailfishos:chum:testing` to `sailfishos:chum`: Fill the form with `sailfishos:chum` as the target repository, the target package field shall be left empty to reuse the existing name at `sailfishos:chum:testing` and the description can be left empty, as it is a free text field only for this submit request.
 
 As a reference, see the [maintainer's tasks](Maintainer.md) document for a list of checks and balances performed by the SailfishOS:Chum maintainers.
@@ -104,7 +104,7 @@ Just be aware that for this to work out, you might need to provide some incentiv
 
 If a package is already compiled at the Sailfish&nbsp;OS OBS, simply use the "Submit package" action for the package and all its dependencies, which are not yet available as part of the SailfishOS:Chum repository or Jolla's RPM repositories.
 
-If you are not using the Sailfish&nbsp;OS OBS yet, you should obtain an account there by contacting the user `lbt` at the IRC channel #sailfishos and then configure your software package at the Sailfish&nbsp;OS OBS; alternatively you may ask the SailfishOS:Chum maintainers to add your software to the SailfishOS:Chum testing repository as a preliminary measure.
+If you are not using the Sailfish&nbsp;OS OBS yet, you should obtain an account there by contacting the user `lbt` at the IRC channel #sailfishos and then configure your software package at the Sailfish&nbsp;OS OBS; alternatively you may ask the SailfishOS:Chum maintainers to add your software to the SailfishOS:Chum:Testing repository as a preliminary measure.
 
 For actively developed or maintained software for SFOS, it is expected that the source code is fetched from the software repository where it is developed.
 In contrast to the subsequent paragraph, no requests for forking a software as a project under the GitHub organisation [sailfishos-chum](https://github.com/sailfishos-chum) are expected for actively maintained software.
@@ -115,7 +115,7 @@ If an application or other software for SFOS has not been picked up by some othe
 The link to the original git repository at GitHub, GitLab or elsewhere must be included.
 
 The request will be evaluated and a fork of the software into the GitHub organisation [sailfishos-chum](https://github.com/sailfishos-chum) might be created.
-If necessary, the packaging scripts will be updated and ultimately the software might be added to the SailfishOS:Chum testing repository with the perspective of promotion to the SailfishOS:Chum main repository.
+If necessary, the packaging scripts will be updated and ultimately the software might be added to the SailfishOS:Chum:Testing repository with the perspective of promotion to the SailfishOS:Chum main repository.
 
 ### Submitting third party software
 
@@ -153,5 +153,4 @@ repository.
 
 - Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?<br />
   Yes, in general solely software which is distributed under an [OSI approved license](https://opensource.org/licenses) might be submitted to the Sailfish&nbsp;OS OBS.
-  Exceptions may be made in special cases as firmware blobs, but in general this guidance shall be obeyed:
-  [openSUSE:Build_Service_application_blacklist](https://en.opensuse.org/openSUSE:Build_Service_application_blacklist)
+  Exceptions may be made in special cases as firmware blobs, but in general this guidance shall be obeyed: [openSUSE:Build_Service_application_blacklist](https://en.opensuse.org/openSUSE:Build_Service_application_blacklist)

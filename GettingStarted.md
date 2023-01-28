@@ -88,9 +88,9 @@ These can be added using a UI, but it is easier to add them manually.
 4. You can click on the package name, and then click on the build target status to
    see the current build log.
   
-## Submitting your package to sailfishos:chum:testing
+## Submitting your package to SailfishOS:Chum:Testing
 
-Once your builds are working fine, you can submit it for inclusion to `sailfishos:chum:testing`.
+Once your builds are working fine, you can submit it for inclusion to the `sailfishos:chum:testing` OBS repository.
 
 1. Navigate to the package, and click "Submit Package".
 2. Enter the target project as `sailfishos:chum:testing`.
