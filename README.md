@@ -153,5 +153,4 @@ repository.
 
 - Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?<br />
   Yes, in general solely software which is distributed under an [OSI approved license](https://opensource.org/licenses) might be submitted to the Sailfish&nbsp;OS OBS.
-  Exceptions may be made in special cases as firmware blobs, but in general this guidance shall be obeyed:
-  [openSUSE:Build_Service_application_blacklist](https://en.opensuse.org/openSUSE:Build_Service_application_blacklist)
+  Exceptions may be made in special cases as firmware blobs, but in general this guidance shall be obeyed: [openSUSE:Build_Service_application_blacklist](https://en.opensuse.org/openSUSE:Build_Service_application_blacklist)
