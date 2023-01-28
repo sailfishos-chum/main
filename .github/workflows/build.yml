@@ -38,5 +38,5 @@ jobs:
     - name: Upload build result
       uses: actions/upload-artifact@v3
       with:
-        name: rpm-build-result
+        name: RPM-build-results
         path: RPMS/
