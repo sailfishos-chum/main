@@ -3,17 +3,18 @@ License:        MIT
 Name:           sailfishos-chum
 Version:        0.5.1
 Release:        1
-Provides:       sailfishos-chum-repository
 Group:          System
+BuildArch:      noarch
 URL:            https://github.com/sailfishos-chum/main
 Source0:        %{url}/archive/%{version}/main-%{version}.tar.gz
 Requires:       ssu
 Requires(post): ssu
 Requires(postun): ssu
 Conflicts:      sailfishos-chum-testing
+Obsoletes:      sailfishos-chum-testing
 Conflicts:      sailfishos-chum-gui
 Conflicts:      sailfishos-chum-gui-installer
-BuildArch:      noarch
+Provides:       sailfishos-chum-repository
 
 %description
 The package sailfishos-chum is a helper RPM, which solely provides an
@@ -31,8 +32,9 @@ sailfishos-chum-gui-installer RPM), instead of the sailfishos-chum RPM.
 PackageName: SailfishOS:Chum repository configuration RPM
 Type: generic
 Categories:
- - Utilities
  - System
+ - Utility
+ - Settings
  - PackageManager
  - ConsoleOnly
 DeveloperName: SailfishOS:Chum community
@@ -49,15 +51,16 @@ Url:
 %package testing
 Summary:        SSU configuration for the SailfishOS:Chum TESTING repository
 License:        MIT
-Provides:       sailfishos-chum-repository
 Group:          System
+BuildArch:      noarch
 Requires:       ssu
 Requires(post): ssu
 Requires(postun): ssu
 Conflicts:      sailfishos-chum
+Obsoletes:      sailfishos-chum
 Conflicts:      sailfishos-chum-gui
 Conflicts:      sailfishos-chum-gui-installer
-BuildArch:      noarch
+Provides:       sailfishos-chum-repository
 
 %description testing
 The package sailfishos-chum-testing is a helper RPM, which solely provides an
@@ -77,8 +80,9 @@ sailfishos-chum-gui-installer RPM), instead of the sailfishos-chum-testing RPM.
 PackageName: SailfishOS:Chum:Testing repository configuration RPM
 Type: generic
 Categories:
- - Utilities
  - System
+ - Utility
+ - Settings
  - PackageManager
  - ConsoleOnly
 DeveloperName: SailfishOS:Chum community
