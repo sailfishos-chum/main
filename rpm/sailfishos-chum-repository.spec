@@ -1,7 +1,7 @@
 Summary:        SSU configuration for the SailfishOS:Chum community repository
 License:        MIT
 Name:           sailfishos-chum
-Version:        0.5.2
+Version:        0.5.3
 Release:        1
 Group:          System
 BuildArch:      noarch
@@ -114,19 +114,13 @@ Url:
 %files testing
 
 %post
-if ! ssu lr | grep '^ - ' | cut -f 3 -d ' ' | grep -Fq sailfishos-chum
-then
-  ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
-  ssu ur
-fi
+ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%%(release)_%%(arch)/'
+ssu ur
 exit 0
 
 %post testing
-if ! ssu lr | grep '^ - ' | cut -f 3 -d ' ' | grep -Fq sailfishos-chum-testing
-then
-  ssu ar sailfishos-chum-testing 'https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%%(release)_%%(arch)/'
-  ssu ur
-fi
+ssu ar sailfishos-chum-testing 'https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%%(release)_%%(arch)/'
+ssu ur
 exit 0
 
 %postun
