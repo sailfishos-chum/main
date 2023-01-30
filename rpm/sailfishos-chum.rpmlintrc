@@ -6,7 +6,7 @@
 
 # On behalf of Jolla's tar_git / SailfishOS-OBS:
 # - It re-writes the DistURL, rendering it inconsistent
-addFilter('invalid-url DistURL')
+addFilter('invalid-url DistURL obs:')
 # - It has a limited list of FLOSS-licenses, most SDPX-IDs are missing
 addFilter('invalid-license')
 # - It extracts strange changelog entries out of Git, if a %%changelog section is used
@@ -29,10 +29,9 @@ setBadness('description-line-too-long', 0)
 # - This is how it ought to be
 addFilter('obsolete-not-provided sailfishos-chum')
 addFilter('unversioned Obsoletes: Obsoletes:  *sailfishos-chum')
+# - This is also how it ought to be
+addFilter('meego-filelist-empty')
 # - This is how it ought to be, too
-addFilter('obsolete-not-provided sailfishos-chum-testing')
-addFilter('unversioned Obsoletes: Obsoletes:  *sailfishos-chum-testing')
-# - And so it this
 addFilter('dangerous-command-in-%postun rm')
 # - This is by the current design of this source-repository's structure.
 #   IMO it makes sense to rename spec file to "sailfishos-chum.spec" and move
