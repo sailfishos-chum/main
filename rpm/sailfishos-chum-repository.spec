@@ -3,7 +3,7 @@ License:        MIT
 Name:           sailfishos-chum
 Version:        0.5.3
 Release:        1
-Group:          System
+Group:          System/Console
 BuildArch:      noarch
 URL:            https://github.com/sailfishos-chum/main
 # The "Source0:" line below requires that the value of %%{name} is also the
