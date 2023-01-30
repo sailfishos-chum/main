@@ -34,7 +34,9 @@ addFilter('obsolete-not-provided sailfishos-chum-testing')
 addFilter('unversioned Obsoletes: Obsoletes:  *sailfishos-chum-testing')
 # - And so it this
 addFilter('dangerous-command-in-%postun rm')
-# - This is by design of this source-repository's structure
+# - This is by the current design of this source-repository's structure.
+#   IMO it makes sense to rename spec file to "sailfishos-chum.spec" and move
+#   the Repo Config RPM(s) out of the "main" repo to a new repo "sailfishos-chum".
 addFilter('invalid-spec-name')
 setBadness('invalid-spec-name', 0)
 
