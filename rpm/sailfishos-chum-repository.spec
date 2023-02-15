@@ -34,7 +34,7 @@ regular SailfishOS:Chum repository and the SailfishOS:Chum:Testing repository.
 Hence you might rather install the sailfishos-chum-gui RPM (e.g., via the
 sailfishos-chum-gui-installer RPM), instead of the sailfishos-chum RPM.
 
-%if "%{?vendor}" == "chum"
+%if 0%{?_chum}
 PackageName: SailfishOS:Chum repository configuration RPM
 Type: generic
 Categories:
@@ -82,7 +82,7 @@ regular SailfishOS:Chum repository and the SailfishOS:Chum:Testing repository.
 Hence you might rather install the sailfishos-chum-gui RPM (e.g., via the
 sailfishos-chum-gui-installer RPM), instead of the sailfishos-chum-testing RPM.
 
-%if "%{?vendor}" == "chum"
+%if 0%{?_chum}
 PackageName: SailfishOS:Chum:Testing repository configuration RPM
 Type: generic
 Categories:
