@@ -102,6 +102,9 @@ Url:
 %endif
 
 
+%define _binary_payload w6.gzdio
+%define _source_payload w2.gzdio
+
 %prep
 %setup -q
 
@@ -156,4 +159,3 @@ exit 0
 %changelog
 * Thu Sep  9 1999 olf <Olf0@users.noreply.github.com> - 99.99.99
 - See %{url}/releases
-
