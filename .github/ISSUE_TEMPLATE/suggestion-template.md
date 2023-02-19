@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for SailfishOS:Chum
+about: Suggest an idea for SailfishOS:Chum community repository
 title: "[Suggestion] "
 labels: 'enhancement'
 assignees: ''

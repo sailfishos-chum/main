@@ -1,6 +1,6 @@
 ---
 name: Help form
-about: Questions about SailfishOS:Chum
+about: Questions about SailfishOS:Chum community repository
 title: "[Help] "
 labels: 'question'
 assignees: ''
@@ -9,7 +9,6 @@ assignees: ''
 
 **SailfishOS VERSION** (Settings → About product → Build): 
 <br />**HARDWARE** (Settings → About product → Manufacturer & Product name): 
-<br />**SailfishOS:Chum VERSION(s)** (`pkcon search name sailfishos-chum`): 
 <br />
 
 #### QUESTION
