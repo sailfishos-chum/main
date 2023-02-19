@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a bug for SailfishOS:Chum
+about: Report a bug for the SailfishOS:Chum community repository
 title: "[Bug] "
 labels: 'bug'
 assignees: ''
@@ -9,7 +9,6 @@ assignees: ''
 
 **SailfishOS VERSION** (Settings → About product → Build): 
 <br />**HARDWARE** (Settings → About product → Manufacturer & Product name): 
-<br />**SailfishOS:Chum VERSION(s)** (`pkcon search name sailfishos-chum`): 
 <br />
 
 #### BUG DESCRIPTION
