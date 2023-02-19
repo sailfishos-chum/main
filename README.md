@@ -64,7 +64,7 @@ To utilise the SailfishOS:Chum repository using command line tools on your devic
 3. refresh the software cache on your device as root user per `pkcon refresh` or `zypper ref`.
 4. install any software packages you like from the SailfishOS:Chum repository as root user per `pkcon install <package name>` or `zypper in <package name>`.
 
-As all software packages at SailfishOS:Chum have their vendor set to `chum`, it is easy to determine which packages are installed from the SailfishOS:Chum repository by executing:<br />
+As software packages at SailfishOS:Chum have their vendor set to `chum` by default (*but* this can be overrridden in a package's spec file), for many packages it is easy to determine which ones are installed from the SailfishOS:Chum repository by executing:<br />
 `rpm -qa --queryformat '%{vendor}:%{name}\n' | fgrep chum`
 
 
