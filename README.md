@@ -50,21 +50,20 @@ There are two different ways of using the SailfishOS:Chum repository:
 
 ### How to install the SailfishOS:Chum GUI application
 
-The client app (GUI) for SailfishOS:Chum is available for easy installation at [chumrpm.netlify.app](https://chumrpm.netlify.app/) and its individual RPMs are also provided at [the SailfishOS:Chum repository](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum-gui).
+The easiest way to install the SailfishOS:Chum GUI application built for the CPU-architecture of a device and its installed Sailfish&nbsp;OS release fully automatically is [the SailfishOS:Chum GUI Installer](https://github.com/sailfishos-chum/sailfishos-chum-gui-installer).  Because it is [hosted at OpenRepos](https://openrepos.net/content/olf/sailfishoschum-gui-installer) it can be conveniently [installed via Storeman](https://openrepos.net/content/olf/storeman-installer), or manually downloaded and installed, e.g., by `pkcon install-local <local path of package>`.  Alternatively a version of the SailfishOS:Chum GUI application for a specific CPU-architecture and Sailfish&nbsp;OS release can be manually selected and downloaded at [chumrpm.netlify.app](https://chumrpm.netlify.app/) for manual installation.  Furthermore SailfishOS:Chum GUI application's individual RPMs are also provided at [the SailfishOS:Chum repository](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum-gui), where they can be fully manually selected and fetched from, as the SailfishOS:Chum GUI Installer does in a fully automated manner and the web-interface at chumrpm.netlify.app semi-automated.
 
 ### How to deploy the configuration for command line tools
 
-For using the SailfishOS:Chum repository per command line tools, a `sailfishos-chum` helper RPM is available for easy installation also at [chumrpm.netlify.app](https://chumrpm.netlify.app/) and the [SailfishOS:Chum repository](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum) (plus at [OpenRepos.net](https://openrepos.net/content/olf/sailfishoschum-repo-config-rpm)), which solely provides an appropriate local repository configuration for utilising the SailfishOS:Chum repository.
+For using the SailfishOS:Chum repository by command line tools, a `sailfishos-chum-repo-config` helper RPM, which solely provides an appropriate local repository configuration for utilising the SailfishOS:Chum repository, is available for installation at [OpenRepos.net](https://openrepos.net/content/olf/sailfishoschum-repo-config-rpm), at [chumrpm.netlify.app](https://chumrpm.netlify.app/) and the [SailfishOS:Chum repository](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum-repo-config).
 
-Note that installing the SailfishOS:Chum GUI application deploys the same local repository configuration, so your device is already set for using the SailfishOS:Chum repository with the usual command line tools for package management, then.
+Mind that installing the SailfishOS:Chum GUI application deploys the same local repository configuration, so your device is already set for using the SailfishOS:Chum repository with the usual command line tools for package management, then.
 
 To utilise the SailfishOS:Chum repository using command line tools on your device, you have to …
-1. download either of the aforementioned packages `sailfishos-chum` or `sailfishos-chum-gui`.
-2. install it using a file manager or as root user by executing `pkcon install-local sailfishos-chum[-gui]-<version>.rpm` or `zypper in sailfishos-chum[-gui]-<version>.rpm`.
-3. refresh the software cache on your device as root user per `pkcon refresh` or `zypper ref`.
-4. install any software packages you like from the SailfishOS:Chum repository as root user per `pkcon install <package name>` or `zypper in <package name>`.
+1. install either of the aforementioned packages `sailfishos-chum-gui` or `sailfishos-chum-repo-config`.
+2. refresh the package cache on your device as root user per `pkcon refresh` or `zypper ref`.
+3. install any software packages you like from the SailfishOS:Chum repository as root user by executing `pkcon install <package name>` or `zypper in <package name>`.  You can also search for available packages by executing `pkcon search name <search string>` or `zypper se <search string>`.
 
-As software packages at SailfishOS:Chum have their vendor set to `chum` by default (*but* this can be overrridden in a package's spec file), for many packages it is easy to determine which ones are installed from the SailfishOS:Chum repository by executing:<br />
+As software packages at SailfishOS:Chum have their vendor set to `chum` by default (*but* this can be overrridden in a package's spec file), for most packages it is easy to determine which ones are installed from the SailfishOS:Chum repository by executing:<br />
 `rpm -qa --queryformat '%{vendor}:%{name}\n' | fgrep chum`
 
 
