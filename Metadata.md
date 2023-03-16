@@ -3,10 +3,10 @@
 The basic specification for the additional metadata is [that of AppStream](https://freedesktop.org/software/appstream/docs/chap-Metadata.html#spec-component-filespec).
 While it is a goal to leverage AppStream metadata directly for SailfishOS:Chum packages and the SailfishOS:Chum GUI application, we are not at that stage yet, and are instead using a method of embedding metadata in the `%description` section of the RPM spec file.
 
-Note that it is important, that the part from the `%if "%{?vendor}" == "chum"` to the `%endif` is the last and a contiguous paragraph of the `%description` section, i.e., it must not contain empty or comment lines (or any other line, which is evaluated to an empty line).
+Note that it is important, that the part from the `%if 0%{?_chum}` to the `%endif` is the last and a contiguous paragraph of the `%description` section, i.e., it must not contain empty or comment lines (or any other line, which is evaluated to an empty line).
 If you need comment lines for remarks with regard to the SailfishOS:Chum metadata, place them outside of the whole metadata paragraph, as shown in the example.
 
-Also note that embracing the metadata for SailfishOS:Chum by `%if "%{?vendor}" == "chum"` / `%endif` is not strictly necessary: If the `%if…` and `%endif` lines are both omitted, the metadata for SailfishOS:Chum is displayed as part of the package description by common tools as `pkcon`, `zypper`, `rpm` etc.
+Also note that embracing the metadata for SailfishOS:Chum by `%if 0%{?_chum}` / `%endif` is not strictly necessary: If the `%if…` and `%endif` lines are both omitted, the metadata for SailfishOS:Chum is displayed as part of the package description by common tools as `pkcon`, `zypper`, `rpm` etc.
 Nevertheless, metadata for SailfishOS:Chum always must be contiguous (i.e., without lines which are empty or may be evaluated to become empty) and the last paragraph of the `%description` section.
 
 An example of how this is done follows:
@@ -16,7 +16,7 @@ A camera application for Sailfish OS, which provides advanced features.
 
 # This description section includes metadata for SailfishOS:Chum, see
 # https://github.com/sailfishos-chum/main/blob/main/Metadata.md
-%if "%{?vendor}" == "chum"
+%if 0%{?_chum}
 PackageName: Advanced Camera
 Type: desktop-application
 DeveloperName: Adam Pigg
