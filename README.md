@@ -56,6 +56,8 @@ Alternatively a version of the SailfishOS:Chum GUI application for a specific CP
 
 Furthermore SailfishOS:Chum GUI application's individual RPMs are also provided at the [SailfishOS:Chum repository](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum-gui), where they can be fully manually selected and fetched from, as the SailfishOS:Chum GUI Installer does in a fully automated manner and the web-interface at chumrpm.netlify.app semi-automated.
 
+**Important note**: If you experience issues while or after installing the SailfishOS:Chum GUI application, [do read the installation notes](https://github.com/sailfishos-chum/sailfishos-chum-gui#important-notes)!
+
 ### How to deploy the configuration for command line tools
 
 For using the SailfishOS:Chum repository by command line tools, a `sailfishos-chum-repo-config` helper RPM, which solely provides an appropriate local repository configuration for utilising the SailfishOS:Chum repository, is available at [OpenRepos](https://openrepos.net/content/olf/sailfishoschum-repo-config-rpm), at [chumrpm.netlify.app](https://chumrpm.netlify.app/), at [GitHub](https://github.com/sailfishos-chum/sailfishos-chum-repo-config/releases) and [SailfishOS:Chum](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum-repo-config).
