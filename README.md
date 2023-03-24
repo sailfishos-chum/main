@@ -31,8 +31,8 @@ Sailfish&nbsp;OS OBS. Additionally this eases tracing multiple and
 potentially layered dependencies ("dependency chains") which is crucial
 for keeping the software supply chains of complex packages up-to-date.
 
-The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:<br />
-https://build.sailfishos.org/project/show/sailfishos:chum
+The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:
+[build.sailfishos.org/project/show/sailfishos:chum](https://build.sailfishos.org/project/show/sailfishos:chum)
 
 This repository at GitHub is used for filing general issues and
 publishing documentation for SailfishOS:Chum.
