@@ -60,7 +60,7 @@ Furthermore SailfishOS:Chum GUI application's individual RPMs are also provided 
 
 ### How to deploy the configuration for command line tools
 
-For using the SailfishOS:Chum repository by command line tools, a `sailfishos-chum-repo-config` helper RPM, which solely provides an appropriate local repository configuration for utilising the SailfishOS:Chum repository, is available at [OpenRepos](https://openrepos.net/content/olf/sailfishoschum-repo-config-rpm), at [chumrpm.netlify.app](https://chumrpm.netlify.app/), at [GitHub](https://github.com/sailfishos-chum/sailfishos-chum-repo-config/releases) and [SailfishOS:Chum](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum-repo-config).
+For using the SailfishOS:Chum repository by command line tools, a [`sailfishos-chum-repo-config` helper RPM](https://github.com/sailfishos-chum/sailfishos-chum-repo-config#readme), which solely provides an appropriate local repository configuration for utilising the SailfishOS:Chum repository, is available at [OpenRepos](https://openrepos.net/content/olf/sailfishoschum-repo-config-rpm), at [chumrpm.netlify.app](https://chumrpm.netlify.app/), at [GitHub](https://github.com/sailfishos-chum/sailfishos-chum-repo-config/releases) and [SailfishOS:Chum](https://build.sailfishos.org/package/show/sailfishos:chum/sailfishos-chum-repo-config).
 
 Mind that installing the SailfishOS:Chum GUI application deploys the same local repository configuration, so your device is already set for using the SailfishOS:Chum repository with the usual command line tools for package management, then.
 
