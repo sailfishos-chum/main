@@ -9,7 +9,7 @@ If you need comment lines for remarks with regard to the SailfishOS:Chum metadat
 Also note that embracing the metadata for SailfishOS:Chum by `%if 0%{?_chum}` / `%endif` is not strictly necessary: If the `%if…` and `%endif` lines are both omitted, the metadata for SailfishOS:Chum is displayed as part of the package description by common tools as `pkcon`, `zypper`, `rpm` etc.
 Nevertheless, metadata for SailfishOS:Chum always must be contiguous (i.e., without lines which are empty or may be evaluated to become empty) and the last paragraph of the `%description` section.
 
-An example of how this is done follows:
+#### An example
 ```
 %description
 A camera application for Sailfish OS, which provides advanced features. 
@@ -48,7 +48,7 @@ Notes:
 | PackageName:               | Human readable application name                            | Might comprise multiple words, must be a single line with less than ca. 24 characters.  If not set, the package name in the spec file preamble is used.  Does not follow AppStream specification due to conflicting with Jolla's [`tar_git` service](https://github.com/MeeGoIntegration/obs-service-tar-git) used by SailfishOS-OBS. |
 | Type:                      | Basic application type                                     | Defaults to `generic`, unless the package name starts with `harbour-`, then it defaults to `desktop-application`.  See [freedesktop.org:AppStream-docs:YAML-field-dep11](https://www.freedesktop.org/software/appstream/docs/sect-AppStream-YAML.html#field-dep11-type) for valid entries. |
 | DeveloperName:             | Developer's preferred name                                 | If not set, and a GitHub repository is set, then the name will be automatically retrieved.  Note that such automatic retrieval is not ([yet](https://github.com/sailfishos-chum/main/issues/81)) supported for GitLab repositories. |
-| PackagerName:              | Packager's preferred name                                  | Use if different from the developer and is expected to be contacted for packaging issues.  Defaults to the packager name provided in the spec file preable, if set there. | 
+| PackagerName:              | Packager's preferred name                                  | Use if different from the developer and is expected to be contacted for packaging issues.  Defaults to the packager name provided in the spec file preamble, if set there. | 
 | Categories:                | List of categories in which the package will be displayed  | Defaults to `- Other`; see [freedesktop.org:AppStream-docs:ct-categories](https://www.freedesktop.org/software/appstream/docs/chap-CollectionData.html#tag-ct-categories) for the general specification and [specifications.freedesktop.org:menu-spec:apa](https://specifications.freedesktop.org/menu-spec/latest/apa.html) for valid categories. |
 | Custom:                    | Root entry for custom repository fields                    |       |
 | &nbsp;&nbsp;&nbsp;Repo:          | URL of the source code repository                          | If `Repo:` is set, other URLs for the SailfishOS:Chum GUI application will be automatically determined when possible (see `Url:` sub-fields).  Currently supported are GitHub and GitLab.com URLs in the form `https://github.com/<username>/<reponame>` and `https://gitlab.com/<username>/<reponame>`.<br />If `Repo:` (and `PackagingRepo:`, see below) is not set or the metadata for SailfishOS:Chum is completely missing, the URL provided by the `URL:` field in the spec file preamble is used instead. |
