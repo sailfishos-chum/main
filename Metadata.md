@@ -1,5 +1,7 @@
 # Additional metadata for SailfishOS:Chum
 
+### Introduction
+
 The basic specification for the additional metadata is [that of AppStream](https://freedesktop.org/software/appstream/docs/chap-Metadata.html#spec-component-filespec).
 While it is a goal to leverage AppStream metadata directly for SailfishOS:Chum packages and the SailfishOS:Chum GUI application, we are not at that stage yet, and are instead using a method of embedding metadata in the `%description` section of the RPM spec file.
 
@@ -9,7 +11,7 @@ If you need comment lines for remarks with regard to the SailfishOS:Chum metadat
 Also note that embracing the metadata for SailfishOS:Chum by `%if 0%{?_chum}` / `%endif` is not strictly necessary: If the `%if…` and `%endif` lines are both omitted, the metadata for SailfishOS:Chum is displayed as part of the package description by common tools as `pkcon`, `zypper`, `rpm` etc.
 Nevertheless, metadata for SailfishOS:Chum always must be contiguous (i.e., without lines which are empty or may be evaluated to become empty) and the last paragraph of the `%description` section.
 
-#### An example
+### An example
 ```
 %description
 A camera application for Sailfish OS, which provides advanced features. 
@@ -39,10 +41,13 @@ Links:
 ```
 
 ## Field Descriptions
-#### Notes
+
+### Notes
 * All fields are optional, and the example above does not use all possible fields (e.g., it lacks a `PackagingRepo:` tag).
 * The table below documents version 1 of the SailfishOS:Chum metadata definition.<br />
   Note that four tags of the [original version 0](https://github.com/sailfishos-chum/main/blob/3a24059591d75529cf52d29c5d6a8a8f63feb4c6/Metadata.md) are deprecated [due to issues](https://github.com/sailfishos-chum/main/issues/100), but [still valid as synonyms](https://github.com/sailfishos-chum/sailfishos-chum-gui/pull/181) to the four tags which superseded them in version 1.
+
+### Table of field Descriptions
 
 | Tag                             | Field description                                          | Notes |
 | ------------------------------- | ---------------------------------------------------------- | ----- |
