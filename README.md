@@ -155,7 +155,7 @@ repository.
   While you could do that, it is not recommended to re-distribute RPMs from SailfishOS:Chum because they have the vendor set to `chum` by default (unless explicitly unset or set to something else), which will prevent users from distinguishing whether a package was directly installed from the SailfishOS:Chum repository or from some other package repository.<br />
   For a way to automatically build packages at the Sailfish&nbsp;OS OBS utilising SailfishOS:Chum for dependencies, but having the vendor not set to `chum`, see the previous answer.
 
-- **Can I set the vendor field of my software built at SailfishOS:Chum to a value used elsewhere in order to avoid ["vendor stickiness"](https://en.opensuse.org/SDB:Vendor_change_update#Disabling_Vendor_stickiness) to prevent cross-repository updates?**<br />
+- **Can I set the vendor field of my software built at SailfishOS:Chum to a value used elsewhere in order to avoid ["vendor stickiness"](https://en.opensuse.org/SDB:Vendor_change_update) to prevent cross-repository updates?**<br />
   Though this implies the drawbacks denoted in the two previous points, you can do that.
 
 - **Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?**<br />
