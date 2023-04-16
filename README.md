@@ -145,7 +145,7 @@ repository.
   You can use the RPM macro `%sailfishos_version` to build differently depending on the release version.
   This works in the same manner as for other Linux distributions, so you can support multiple Linux distributions with a single spec file.
   For details, see [openSUSE:Build_Service_cross_distribution_howto](https://en.opensuse.org/openSUSE:Build_Service_cross_distribution_howto).<br />
-  Alternatively you may use the [OBS-specific RPM macro `%_repository`](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.supported_formats.html#sec.obs.building.spec2rpm), which resolves to, e.g., `sailfishos4.4.0.72_aarch64`.  The architecture part can also be queried specifically by the classic RPM macros `%ifarch` and `%ifnarch`.
+  Alternatively you may use the [OBS-specific RPM macro `%_repository`](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.supported_formats.html#sec.obs.building.spec2rpm), which resolves to, e.g., `sailfishos4.4.0.72_aarch64`.  The architecture part can also be queried specifically by the classic RPM macros [`%ifarch` and `%ifnarch`](https://rpm-software-management.github.io/rpm/manual/spec.html#conditionals).
   
 - **Can I use the RPMs of my software built at SailfishOS:Chum to upload them to the Jolla Store?**<br />
   Mind that RPMs built at SailfishOS:Chum have [Vendor set to `chum` by default](https://build.merproject.org/project/prjconf/sailfishos:chum), which is not allowed at the Jolla Store ("harbour"), as any other value (`meego` might be an exception).
