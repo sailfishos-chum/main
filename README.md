@@ -76,7 +76,7 @@ As software packages at SailfishOS:Chum have their vendor set to `chum` by defau
 ## Developer's guide
 
 There are no major restrictions imposed on software submitted to SailfishOS:Chum.
-Although one limitation is that submitted software should not interfere with any software distributed by Jolla as a part of Sailfish&nbsp;OS, which also means that updating libraries distributed per Jolla's repositories must be avoided.
+Although one limitation is that submitted software should not interfere with any software distributed by Jolla as a part of Sailfish&nbsp;OS, which also means that updating or replacing libraries distributed by Jolla's repositories must be avoided.
 Note that Jolla's repositories provide far more software packages than the ones installed by default.
 
 All kinds of software for Sailfish&nbsp;OS are welcome at SailfishOS:Chum, for example, actively maintained software for SFOS, abandoned software for SFOS, and tools and libraries which are missing on SFOS as distributed by Jolla.
@@ -149,7 +149,8 @@ repository.
   
 - **Can I use the RPMs of my software built at SailfishOS:Chum to upload them to the Jolla Store?**<br />
   Mind that RPMs built at SailfishOS:Chum have [Vendor set to `chum` by default](https://build.merproject.org/project/prjconf/sailfishos:chum), which is not allowed at the Jolla Store ("harbour"), as any other value (maybe `meego` is an exception).
-  However, it is easy to set up a personal repository at the Sailfish&nbsp;OS OBS (which sets Vendor to `meego` by default for packages built there), configure `sailfishos:chum` to provide the required dependencies and re-build your packages at your own repository.  Alternatively you may explicitly set `Vendor:` in the spec file, but then these RPMs are not identifyable as being built at SailfishOS:Chum, despite being offered via the SailfishOS:Chum community repository.  Note that you cannot unset the vendor by `%undefine vendor`.
+  However, it is easy to set up a personal repository at the Sailfish&nbsp;OS OBS (which sets Vendor to `meego` by default for packages built there), configure `sailfishos:chum` to provide the required dependencies and re-build your packages at your own repository.<br />
+  Alternatively you may explicitly set `Vendor:` in the spec file, but then these RPMs are not identifyable as being built at SailfishOS:Chum or the Sailfish&nbsp;OS OBS, despite being offered there (unless `Vendor:` is set to `chum` or `meego`).  Note that you cannot unset the vendor by `%undefine vendor`.<br />
   As a result, you will get automated builds for all architectures wanted without the vendor set to `chum` in your RPMs.
 
 - **Can I use the RPMs of my software built at SailfishOS:Chum to upload them to OpenRepos or elsewhere?**<br />
