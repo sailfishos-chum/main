@@ -142,20 +142,21 @@ repository.
 
 - **Can I build differently depending on the Sailfish&nbsp;OS version?**<br />
   Yes, you can.
-  You can use the RPM macro `sailfishos_version` to build differently depending on the release version.
+  You can use the RPM macro `%sailfishos_version` to build differently depending on the release version.
   This works in the same manner as for other Linux distributions, so you can support multiple Linux distributions with a single spec file.
-  For details, see [openSUSE:Build_Service_cross_distribution_howto](https://en.opensuse.org/openSUSE:Build_Service_cross_distribution_howto).
+  For details, see [openSUSE:Build_Service_cross_distribution_howto](https://en.opensuse.org/openSUSE:Build_Service_cross_distribution_howto).<br />
+  Alternatively you may use the [OBS-specific RPM macro `%_repository`](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.supported_formats.html#sec.obs.building.spec2rpm), which resolves to, e.g., `sailfishos4.4.0.72_aarch64`.  The architecture part can also be queried specifically by the classic RPM macros `%ifarch` and `%ifnarch`.
   
 - **Can I use the RPMs of my software built at SailfishOS:Chum to upload them to the Jolla Store?**<br />
-  Mind that RPMs built at SailfishOS:Chum have [the vendor set to `chum` by default](https://build.merproject.org/project/prjconf/sailfishos:chum), which is not allowed at the Jolla Store ("harbour"), as any other value.
-  However, it is easy to set up a personal repository at the Sailfish&nbsp;OS OBS, configure `sailfishos:chum` to provide the required dependencies and re-build your packages at your own repository.  Alternatively you may explicitly unset the vendor by `%undefine vendor` in the spec file, but then these RPMs are not identifyable as being built at SailfishOS:Chum, despite being offered via the SailfishOS:Chum community repository.
+  Mind that RPMs built at SailfishOS:Chum have [Vendor set to `chum` by default](https://build.merproject.org/project/prjconf/sailfishos:chum), which is not allowed at the Jolla Store ("harbour"), as any other value (maybe `meego` is an exception).
+  However, it is easy to set up a personal repository at the Sailfish&nbsp;OS OBS (which sets Vendor to `meego` by default for all packages built there), configure `sailfishos:chum` to provide the required dependencies and re-build your packages at your own repository.  Alternatively you may explicitly set `Vendor:` in the spec file, but then these RPMs are not identifyable as being built at SailfishOS:Chum, despite being offered via the SailfishOS:Chum community repository.  Note that you cannot unset the vendor by `%undefine vendor`.
   As a result, you will get automated builds for all architectures wanted without the vendor set to `chum` in your RPMs.
 
 - **Can I use the RPMs of my software built at SailfishOS:Chum to upload them to OpenRepos or elsewhere?**<br />
-  While you could do that, it is not recommended to re-distribute RPMs from SailfishOS:Chum because they have the vendor set to `chum` by default (unless explicitly unset or set to something else), which will prevent users from distinguishing whether a package was directly installed from the SailfishOS:Chum repository or from some other package repository.<br />
-  For a way to automatically build packages at the Sailfish&nbsp;OS OBS utilising SailfishOS:Chum for dependencies, but having the vendor not set to `chum`, see the previous answer.
+  While you could do that, it is not recommended to re-distribute RPMs from SailfishOS:Chum because they have Vendor set to `chum` by default (unless explicitly set to something else), which will prevent users from distinguishing whether a package was directly installed from the SailfishOS:Chum repository or from some other package repository, and additionally overrides package store separation by ["Vendor stickiness"](https://en.opensuse.org/SDB:Vendor_change_update) (see also next bullet point).
+  For a way to automatically build packages at the Sailfish&nbsp;OS OBS utilising SailfishOS:Chum for dependencies, but having the Vendor not set to `chum`, see previous answer.
 
-- **Can I set the vendor field of my software built at SailfishOS:Chum to a value used elsewhere in order to avoid ["vendor stickiness"](https://en.opensuse.org/SDB:Vendor_change_update) to prevent cross-repository updates?**<br />
+- **Can I set the Vendor field of my software built at SailfishOS:Chum to a value used elsewhere in order to avoid ["Vendor stickiness"](https://en.opensuse.org/SDB:Vendor_change_update), which prevents cross-repository updates?**<br />
   Though this implies the drawbacks denoted in the two previous points, you can do that.
 
 - **Are there limitations on the licensing of the software which is submitted to SailfishOS:Chum?**<br />
