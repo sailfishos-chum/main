@@ -109,7 +109,7 @@ Just be aware that for this to work out, you might need to provide some incentiv
 
 If a package is already compiled at the Sailfish&nbsp;OS OBS, simply use the "Submit package" action for the package and all its dependencies, which are not yet available as part of the SailfishOS:Chum repository or Jolla's RPM repositories.
 
-If you are not using the Sailfish&nbsp;OS OBS yet, you should obtain an account there by contacting the user `lbt` at the IRC channel #sailfishos and then configure your software package at the Sailfish&nbsp;OS OBS; alternatively you may ask the SailfishOS:Chum maintainers to add your software to the SailfishOS:Chum:Testing repository as a preliminary measure.
+If you are not using the Sailfish&nbsp;OS OBS yet, you should obtain an account there by contacting the user `lbt` via direct message at [the Sailfish&nbsp;Forum](https://forum.sailfishos.org/u/lbt/summary) or [the IRC channel #sailfishos](https://webchat.oftc.net/?channels=#sailfishos) and then configure your software package at the Sailfish&nbsp;OS OBS; alternatively you may ask the SailfishOS:Chum maintainers to add your software to the SailfishOS:Chum:Testing repository as a preliminary measure.
 
 For actively developed or maintained software for SFOS, it is expected that the source code is fetched from the software repository where it is developed.
 In contrast to the subsequent paragraph, no requests for forking a software as a project under the GitHub organisation [sailfishos-chum](https://github.com/sailfishos-chum) are expected for actively maintained software.
