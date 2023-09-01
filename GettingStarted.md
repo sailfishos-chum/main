@@ -37,7 +37,7 @@ To create your first package, perform the following steps:
         <param name="branch">master</param>
         <param name="revision"></param>
         </service>
-    </services>`
+    </services>
     ```
    Specify at least the URL.  If you want to build another branch, change the 
    branch name, and if you want to build a particular revision, specify a git hash
