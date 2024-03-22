@@ -14,7 +14,7 @@ https://build.sailfishos.org/project/show/home:<username\>
 ## Creating a package on OBS
 
 OBS projects contain packages which are built against target repositories
-(i.e., Sailfish&nbsp;OS versions, not source / git repositories).
+(i.e. Sailfish&nbsp;OS versions, not source / git repositories).
 
 ### Prerequisites
 
