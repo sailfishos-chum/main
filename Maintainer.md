@@ -17,7 +17,7 @@ maintainer is tasked to check that …
 - no binary blobs, such as precompiled libraries, applications or other executable files, are part of the package submission.
   Bundled databases or similar are allowed.
   
-- the package does not conflict with (e.g., replace) any package from Jolla's repositories for Sailfish&nbsp;OS.
+- the package does not conflict with (e.g. replace) any package from Jolla's repositories for Sailfish&nbsp;OS.
 
 After these checks have been successful, …
 
