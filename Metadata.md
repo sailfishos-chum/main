@@ -40,14 +40,14 @@ Links:
 %endif
 ```
 
-## Field Descriptions
+## Field descriptions
 
 ### Notes
 * All fields are optional, and the example above does not use all possible fields (e.g. it lacks a `PackagingRepo:` tag).
 * The table below documents version 1 of the SailfishOS:Chum metadata definition.<br />
   Note that four tags of the [original version 0](https://github.com/sailfishos-chum/main/blob/3a24059591d75529cf52d29c5d6a8a8f63feb4c6/Metadata.md) are deprecated [due to issues](https://github.com/sailfishos-chum/main/issues/100), but [still valid as synonyms](https://github.com/sailfishos-chum/sailfishos-chum-gui/pull/181) to the four tags which superseded them in version 1.
 
-### Table of field Descriptions
+### Table of field descriptions
 
 | Tag                              | Field description                                          | Notes |
 | -------------------------------- | ---------------------------------------------------------- | ----- |
