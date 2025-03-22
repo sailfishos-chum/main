@@ -8,7 +8,7 @@ ships the same software.
 This causes the issue that Chum is suddenly in violation of the agreement that
 no Sailfish OS upstream packages be published on it.
 
-Still, the package is publiched on Chum, other software may depend on it, and
+Still, the package is published on Chum, other software may depend on it, and
 usually it's beneficial to keep it there, and continue to offer it for older OS
 releases.
 
@@ -16,7 +16,7 @@ Hence this
 
 ### Process for retiring a package:
 
-#### Organizational
+#### Organisational
 
 0. Hopefully, a Chum package maintainer is informed in due time by the Sailfish OS team that retirement is necessary.
 
@@ -27,22 +27,22 @@ Hence this
 
 The exact changes necessary should be determined/documented/tracked in said bug reports.
 
-The Sailfishos IRC channel `#sailfishos` on the OFTC network is there for
+The SailfishOS IRC channel `#sailfishos` on the OFTC network is there for
 discussion. In more complicated cases it may be good to bring the issue to
 Jolla, either at their [Issue Tracker](https://github.com/sailfishos/issue-tracker/issues/),
 or as a point to discuss at a [Community Meeting](https://forum.sailfishos.org/tag/community-meeting).
 
 #### Technical
-1. Investigate differences in packaging. Things like subpackage names etc.
+1. Investigate differences in packaging. Things like sub-package names etc.
 1. Identify the last SailfishOS release where the package may be published on Chum.
 1. If there are relevant differences in packaging, for existing, published
    repository versions of the chum package, publish a new revision which aligns
    the chum packaging with the Sailfish OS one. 
-   Think about the update case from the Chum verstion to the Sailfish OS version and
+   Think about the update case from the Chum version to the Sailfish OS version and
    ensure a clean update path is possible.
    Take care of `Obsoletes:`, `Conflicts:` and so on.
 1. Optionally (and for `tar_git` packaging only), if the `sailfishos-mirror`
-   organization now has a fork or clone repository, point git submodules there
+   organisation now has a fork or clone repository, point git sub-modules there
    instead of the original.  1. Edit the .spec file so the package cannot be built
    on conflicting versions.
 1. Note that disabling build repos on OBS may seem like a viable strategy, but
