@@ -16,8 +16,23 @@ Hence this
 
 ### Process for retiring a package:
 
+#### Organizational
+
 0. Hopefully, a Chum package maintainer is informed in due time by the Sailfish OS team that retirement is necessary.
 
+1. If you are not the maintainer of the affected package, file a bug with its packaging repository.
+1. If there is no packaging repository, and no other means of informing the
+   packager of the issue, or they are not responsive, etc., file a bug at
+   https://github.com/sailfishos-chum/main/issues/ instead (or additionally).
+
+The exact changes necessary should be determined/documented/tracked in said bug reports.
+
+The Sailfishos IRC channel `#sailfishos` on the OFTC network is there for
+discussion. In more complicated cases it may be good to bring the issue to
+Jolla, either at their [Issue Tracker](https://github.com/sailfishos/issue-tracker/issues/),
+or as a point to discuss at a [Community Meeting](https://forum.sailfishos.org/tag/community-meeting).
+
+#### Technical
 1. Investigate differences in packaging. Things like subpackage names etc.
 1. Identify the last SailfishOS release where the package may be published on Chum.
 1. If there are relevant differences in packaging, for existing, published
