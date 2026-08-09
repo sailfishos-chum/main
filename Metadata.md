@@ -29,8 +29,7 @@ Custom:
   Repo: https://github.com/piggz/harbour-advanced-camera
 PackageIcon: https://github.com/piggz/harbour-advanced-camera/raw/master/harbour-advanced-camera.svg
 AIRating: B
-AINote: Used Claude for some of the API details
-AINoteMD: https://github.com/piggz/harbour-advanced-camera/raw/master/README_AINotes.md
+AINote: Used Claude during prototyping some of the API details
 Screenshots:
  - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot1.png
  - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot2.png
