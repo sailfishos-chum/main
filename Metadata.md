@@ -28,6 +28,9 @@ Categories:
 Custom:
   Repo: https://github.com/piggz/harbour-advanced-camera
 PackageIcon: https://github.com/piggz/harbour-advanced-camera/raw/master/harbour-advanced-camera.svg
+AIRating: B
+AINote: Used Claude for some of the API details
+AINoteMD: https://github.com/piggz/harbour-advanced-camera/raw/master/README_AINotes.md
 Screenshots:
  - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot1.png
  - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot2.png
@@ -57,6 +60,8 @@ Links:
 | PackagedBy:                      | Packager's preferred name                                  | Use if different from the developer and is expected to be contacted for packaging issues.  Defaults to the packager name provided in the spec file preamble, if set there. | 
 | Categories:                      | List of categories in which the package will be displayed  | Each category shall be provided in a single line prefixed by `- ` (dash & space).  Defaults to `Other`.  See [freedesktop.org:AppStream-docs:ct-categories](https://www.freedesktop.org/software/appstream/docs/chap-CatalogData.html#tag-ct-categories) for the general specification.  Valid main categories are `Library` and those listed in [freedesktop.org:menu-spec:categories](https://specifications.freedesktop.org/menu-spec/latest/category-registry.html), additional categories are described in [freedesktop.org:menu-spec:additional-category](https://specifications.freedesktop.org/menu-spec/latest/additional-category-registry.html) (plus [freedesktop.org:menu-spec:reserved-category](https://specifications.freedesktop.org/menu-spec/latest/reserved-category-registry.html) when really appropriate). |
 | AIRating:                        | Indicates level of AI use in coding                        | values A-D or V, see below |
+| AINote:                          | short one-line note on the details of AI use               |        |
+| AINoteMD:                        | URL for a package description in MarkDown syntax           | If provided, a description is downloaded from the specified URL and rendered as MarkDown in [Showdown's Markdown syntax](https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax). |
 | Custom:                          | Root entry for custom repository fields                    |       |
 | &nbsp;&nbsp;&nbsp;Repo:          | URL of the source code repository                          | If `Repo:` is set, other URLs for the SailfishOS:Chum GUI application will be automatically determined when possible (see `Links:` sub-fields).  Currently supported are GitHub and GitLab.com URLs in the form `https://github.com/<username>/<reponame>` and `https://gitlab.com/<username>/<reponame>`.<br />If `Repo:` (and `PackagingRepo:`, see below) is not set or the metadata for SailfishOS:Chum is completely missing, the URL provided by the `URL:` field in the spec file preamble is used instead. |
 | &nbsp;&nbsp;&nbsp;PackagingRepo: | URL of the repository specifically used for packaging      | Is shown in the SailfishOS:Chum GUI application as a web-link.  If `Repo:` is not set, it is also used as a fallback for the GitHub and GitLab integration. |
@@ -65,7 +70,7 @@ Links:
 | Screenshots:                     | List of URLs to screenshots of the application             | If not set, no screenshots will be displayed for the package.  Each URL shall be provided in a single line prefixed by `- ` (dash & space). |
 | Links:                           | Root entry for additional URLs                             | These URL fields are displayed in the SailfishOS:Chum GUI application. |
 | &nbsp;&nbsp;&nbsp;Homepage:      | URL to the application homepage                            | Overrides the `Repo:` URL if set.  This URL is also probed for the GitHub and GitLab integration after probing the URL provided by custom field `Repo:`. |
-| &nbsp;&nbsp;&nbsp;Help:          | URL to an application help page, e.g. a forum             | If not set, and `Repo:` or `Homepage:` is set and points to GitHub, the GitHub discussion page will be used for projects which have it switched on. |
+| &nbsp;&nbsp;&nbsp;Help:          | URL to an application help page, e.g. a forum              | If not set, and `Repo:` or `Homepage:` is set and points to GitHub, the GitHub discussion page will be used for projects which have it switched on. |
 | &nbsp;&nbsp;&nbsp;Bugtracker:    | URL to a bug tracker which allows users to file bugs       | If not set, and `Repo:` or `Homepage:` is set and points to supported repository type, the repository's issues page will be used. |
 | &nbsp;&nbsp;&nbsp;Donation:      | URL to a web page proposed for donations                   |       |
 
@@ -75,6 +80,6 @@ Links:
 | ------- | ---------------- |
 | A       | No AI use at all |
 | B       | AI-assited, all code human-reviewed or rewritten |
-| C       | Partially AI-coded |
+| C       | Some parts AI-coded |
 | D       | Significant parts AI-coded |
 | V       | Fully or almost fully vibe-coded |
