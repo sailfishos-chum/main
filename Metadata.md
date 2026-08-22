@@ -78,7 +78,7 @@ Links:
 | Value   | Description      |
 | ------- | ---------------- |
 | A       | No AI use at all |
-| B       | AI-assited, all code human-reviewed or rewritten |
+| B       | AI-assisted, all code human-reviewed or rewritten |
 | C       | Some parts AI-coded |
 | D       | Significant parts AI-coded |
 | V       | Fully or almost fully vibe-coded |
