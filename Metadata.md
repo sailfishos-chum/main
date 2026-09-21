@@ -28,7 +28,7 @@ Categories:
 Custom:
   Repo: https://github.com/piggz/harbour-advanced-camera
 PackageIcon: https://github.com/piggz/harbour-advanced-camera/raw/master/harbour-advanced-camera.svg
-AIRating: B
+AIRating: A
 AINote: Used Claude during prototyping some of the API details
 Screenshots:
  - https://github.com/piggz/harbour-advanced-camera/raw/master/screenshots/screenshot1.png
@@ -58,9 +58,9 @@ Links:
 | DeveloperName:                   | Developer's preferred name                                 | If not set, and a GitHub repository is set, then the name will be automatically retrieved.  Note that such automatic retrieval is not ([yet](https://github.com/sailfishos-chum/main/issues/81)) supported for GitLab repositories. |
 | PackagedBy:                      | Packager's preferred name                                  | Use if different from the developer and is expected to be contacted for packaging issues.  Defaults to the packager name provided in the spec file preamble, if set there. | 
 | Categories:                      | List of categories in which the package will be displayed  | Each category shall be provided in a single line prefixed by `- ` (dash & space).  Defaults to `Other`.  See [freedesktop.org:AppStream-docs:ct-categories](https://www.freedesktop.org/software/appstream/docs/chap-CatalogData.html#tag-ct-categories) for the general specification.  Valid main categories are `Library` and those listed in [freedesktop.org:menu-spec:categories](https://specifications.freedesktop.org/menu-spec/latest/category-registry.html), additional categories are described in [freedesktop.org:menu-spec:additional-category](https://specifications.freedesktop.org/menu-spec/latest/additional-category-registry.html) (plus [freedesktop.org:menu-spec:reserved-category](https://specifications.freedesktop.org/menu-spec/latest/reserved-category-registry.html) when really appropriate). |
-| AIRating:                        | Indicates level of AI use in coding                        | values A-F or H, see below |
+| AIRating:                        | Indicates level of AI use in coding                        | Single character rating. See the table below for possible values. |
 | AINote:                          | short one-line note on the details of AI use               |        |
-| AINoteMD:                        | URL for a package description in MarkDown syntax           | If provided, a description is downloaded from the specified URL and rendered as MarkDown in [Showdown's Markdown syntax](https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax).<br />Chum Clients may alternatively present the URL as a link instead of rendering the document. |
+| AINoteMD:                        | URL for a AI use description in MarkDown syntax            | If provided, a description is downloaded from the specified URL and rendered as MarkDown in [Showdown's Markdown syntax](https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax).<br />Chum Clients may alternatively present the URL as a link instead of rendering the document. |
 | Custom:                          | Root entry for custom repository fields                    |       |
 | &nbsp;&nbsp;&nbsp;Repo:          | URL of the source code repository                          | If `Repo:` is set, other URLs for the SailfishOS:Chum GUI application will be automatically determined when possible (see `Links:` sub-fields).  Currently supported are GitHub and GitLab.com URLs in the form `https://github.com/<username>/<reponame>` and `https://gitlab.com/<username>/<reponame>`.<br />If `Repo:` (and `PackagingRepo:`, see below) is not set or the metadata for SailfishOS:Chum is completely missing, the URL provided by the `URL:` field in the spec file preamble is used instead. |
 | &nbsp;&nbsp;&nbsp;PackagingRepo: | URL of the repository specifically used for packaging      | Is shown in the SailfishOS:Chum GUI application as a web-link.  If `Repo:` is not set, it is also used as a fallback for the GitHub and GitLab integration. |
@@ -75,14 +75,16 @@ Links:
 
 #### AI Rating Table
 
+The followig values will be evaluated for the "AI Score" display.
+Any values not in the table will show up as "Unknown/Not Specified"
+
 | Value   | Description      |
 | :-----: | :--------------- |
 | H       | Human written code, no AI use at all |
 | A       | No AI-written code, AI used in other parts of the development process |
-| B       | AI-assisted, all code human-reviewed or rewritten |
+| B       | AI-assisted, all code human-reviewed and/or rewritten |
 | C       | Some parts AI-coded |
-| D       | Significant parts AI-coded |
-| E       | Major parts AI-coded |
-| F       | Fully or almost fully vibe-coded |
+| V       | Fully or almost fully vibe-coded |
+| X       | Packager does not want to disclose |
 
 
